@@ -1,12 +1,12 @@
 
 TODOS:
 1. need to set custom alpha dashboard
-2. bufferline setup 
-3. gps maybeicons
 4. lsp config check from core plugins and add custom 
 5. try some git-signs in nvim tree also check other settings like diagonistics
 6. telescope more advanced configs
-7. treesitter advanced configs
 8. which key -- learn and config advanced
-9.
 
+lsp config later
+check if friendly-snippets is working with lua snip and nvim cmp
+check nvimcmp and other cmp working and additional configs.
+autoparis, comment, telescope, whichkey
