@@ -1,0 +1,59 @@
+cloned config and git bare
+,,  ,,    
+installed polybar -- script exec, also install fontawesome all icons
+installed paru opera
+,,  ,,    
+,,  ,,    os-prober ntfs-3gs
+,,  ,,    xorg-xbacklight  
+,,  ,,    grub-customizer --- enable os-prober 
+installed pacman -S python-pywal 
+installed fish 
+installed omf
+,,  ,,      starship -- make config, source in fish, start config 
+,,   ,,     exa bat fd dust ripgrep tokei zoxide fzf 
+            sudo pacman -S git-delta
+,,  ,,      alacritty w3m nvm tmux xclip screenkey task
+,,  ,,      vim, nvim  
+,,  ,,      emacs, doomemacs
+,,  ,,      spotify, visualizer, its blocks for polybar
+,,  ,,      weather and other blocks for polybar
+,,  ,,      terminal based apps:  aria2  ranger spotify-tui ncmpcpp
+,,  ,,      autostart apps for homepage
+
+--------------------
+neofetch cointop htop bpytop speedtest-cli 
+shell-color-scripts cbonsai
+--------------------
+npm install -g mapscii
+pip
+
+gtk theme change also icons maybe with paywal as well....   
+
+
+----------------------
+for tmux follow brainmeetcoding.com/ .. james guide to tmux manual...
+
+power management: tlp,tlpui, auto-cpufreq also setup
+
+
+
+slack
+visual-studio-code-bin
+figma-linux
+vlc, ffmpeg
+
+
+
+
+
+
+
+
+
+
+
+
+----------to do--------
+keybinding for i3blocks and polybar to toggle
+download fonts fontawesome,  --in .fonts
+
