@@ -21,7 +21,7 @@ xorg-xinput, Mouse and TouchPad
 xf86-input-libinput, Mouse and TouchPad
 xf86-video-intel, Intel Driver
 xf86-video-nouveau, Nvidia-Gpu
-nvidia, Nvidia-Gpu, Nvidia-Gpu
+nvidia, Nvidia-Gpu
 nvidia-utils, Nvidia-Gpu
 nvidia-settings, Nvidia-Gpu
 inetutils, Network and Internet
