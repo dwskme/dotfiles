@@ -1,4 +1,81 @@
 PACKAGES,DESCRIPTION
+kvantum-qt5, Theme Engine
+qt5ct, Theme
+adapta-gtk-theme, Theme
+qogir-gtk-theme, Theme
+kvantum-theme-qogir-git, Theme
+papirus-icon-theme, Theme
+xorg-server, Xorg-Packages
+xorg-xbacklight, Xorg-Packages
+xorg-fonts-misc, Xorg-Packages
+xorg-xfd, Xorg-Packages
+xorg-xkill, Xorg-Packages
+xorg-xrandr, Xorg-Packages
+xorg-xrdb, Xorg-Packages
+xorg-xset, Xorg-Packages
+xorg-xev, Xorg-Packages
+xorg-xmodmap, Xorg-Packages
+xorg-xwininfo, Xorg-Packages
+xorg-xsetroot, Xorg-Packages
+xorg-xinput, Mouse and TouchPad
+xf86-input-libinput, Mouse and TouchPad
+xf86-video-intel, Intel Driver
+xf86-video-nouveau, Nvidia-Gpu
+nvidia, Nvidia-Gpu, Nvidia-Gpu
+nvidia-utils, Nvidia-Gpu
+nvidia-settings, Nvidia-Gpu
+inetutils, Network and Internet
+firefox, Network and Internet
+networkmanager, Network and Internet
+networkmanager-openvpn, Network and Internet
+nethogs, Network and Internet
+nm-connection-editor, Network and Internet
+bluez, BlueTooth
+bluez-utils, BlueTooth
+blueman, BlueTooth
+pulseaudio-bluetooth, BlueTooth
+cups, Printers
+gutenprint, Printers
+alsa-plugins, Sounds
+alsa-tools, Sounds
+alsa-utils, Sounds
+pavucontrol, Sounds
+pulseaudio, Sounds
+pulseaudio-alsa, Sounds
+pulseaudio-equalizer-ladspa, Sounds
+ranger, File Management
+highlight, File Management
+trash-cli, File Management
+ueberzug, File Management
+thunar, File Management
+thunar-archive-plugin, File Management
+thunar-media-tags-plugin, File Management
+thunar-volman, File Management
+zip, File Management
+p7zip, File Management
+unzip, File Management
+unrar, File Management
+xarchiver, File Management
+xdg-user-dirs, File Management
+xdg-user-dirs-gtk, File Management
+viewnior, Images
+ffmpeg, Multimedia
+ffmpegthumbnailer, Multimedia
+mpc, Multimedia
+mpd, Multimedia
+mplayer, Multimedia
+ncmpcpp, Multimedia
+tumbler, Multimedia
+noto-fonts, Fonts
+noto-fonts-emoji, Fonts
+terminus-font, Fonts
+ttf-dejavu, Fonts
+os-prober, Grub
+lsb-release, Grub
+archcraft/grub, Grub
+archcraft-grub-theme, Grub
+sddm, Display Manager
+
 arandr,Provide a simple visual front end for XRandR
 bluez,daemons for the bluetooth protocol stack
 bluez-utils,Development and debugging utilities for the bluetooth protocol stack
