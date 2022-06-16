@@ -1,33 +1,8 @@
-!bin/bash
-#1.Set the latest aur and pacman servers
-
-#2.Update it for once
-sudo pacman -Syyu
-sudo pacman -S --needed base-devel
-
-#3.Install AUR helper, Language supoort etc
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-paru
-
-#Installing node and npm
-paru -S nvm 
-# echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.bashrc
-exec $SHELL
-nvm install --lts
-nvm use --lts
 
 
 #Installing miniconda
 paru -S miniconda
 
-#4.Clone the dotfiles repo, Images, Scripts
-#Copying Config files
-mkdir repo
-git clone https://github.com/dwskme/dotfiles
-sudo cp -r repo/dotfiles/* ~/
-exec $SHELL
 
 #5.Set the location and make the required sh executable
 
