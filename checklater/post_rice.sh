@@ -13,16 +13,9 @@
 # Update
 sudo pacman -Syyu --noconfirm || exit 1
 
-#Install paru
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-paru
-
 #Installing node and npm
 paru -S nvm 
-# echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.bashrc
+echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.bashrc
 exec $SHELL
 nvm install --lts
 nvm use --lts
@@ -39,12 +32,11 @@ sudo cp -v -r etc /
 
 # copy all configs
 cp -v -r .config ~/.config
-cp -v -r dots/{.bash_profile,.xinitrc,.xprofile,.scripts} ~/
+cp -v -r .dots/{.bash_profile,.xinitrc,.xprofile,.scripts} ~/
 echo 'export EDITOR="nvim"' >> ~/.bashrc
-echo 'set -o vi' >> ~/.bashrc
 
 
 # copy wallpapers
 mkdir -v -p ~/Wallpapers
-cp -v -r walls ~/Images/Wallpapers
+cp -v -r .wallpapers ~/Wallpapers
 
