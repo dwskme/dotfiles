@@ -4,7 +4,7 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Files and Directories
-DIR="$HOME/.config/i3/polybar"
+DIR="$HOME/.config/polybar"
 SFILE="$DIR/system"
 RFILE="$DIR/.system"
 MFILE="$DIR/.module"

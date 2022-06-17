@@ -5,7 +5,7 @@
 
 ## launch alacritty with i3wm config
 
-CONFIG="$HOME/.config/i3/alacritty/alacritty.yml"
+CONFIG="$HOME/.config/alacritty/alacritty.yml"
 
 if [ "$1" == "-f" ]; then
 	alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG" -o window.opacity=0.65
