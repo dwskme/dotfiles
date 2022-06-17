@@ -13,30 +13,19 @@
 # Update
 sudo pacman -Syyu --noconfirm || exit 1
 
-#Installing node and npm
-paru -S nvm 
-echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.bashrc
-exec $SHELL
-nvm install --lts
-nvm use --lts
-
-
 # Install all packages
 sudo pacman -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs) || exit 1
-
-# enable TLP
-sudo systemctl enable tlp
 
 # set touchpad
 sudo cp -v -r etc /
 
 # copy all configs
-cp -v -r .config ~/.config
-cp -v -r .dots/{.bash_profile,.xinitrc,.xprofile,.scripts} ~/
+cp -v -r ../.config ~/.config
+cp -v -r ../.dots/{.bashrc,.zshrc,.xinitrc,.xprofile} ~/
 echo 'export EDITOR="nvim"' >> ~/.bashrc
 
 
 # copy wallpapers
 mkdir -v -p ~/Wallpapers
-cp -v -r .wallpapers ~/Wallpapers
+cp -v -r ../wallpapers ~/Wallpapers
 
