@@ -8,4 +8,4 @@ if [[ `pidof dunst` ]]; then
 	pkill dunst
 fi
 
-dunst -config ~/.config/dunstrc &
+dunst -config ~/.config/dunst/dunstrc &
