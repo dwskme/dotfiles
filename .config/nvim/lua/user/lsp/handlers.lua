@@ -3,8 +3,8 @@ local M = {}
 M.setup = function()
   local signs = {
 
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
+    { name = "DiagnosticSignError", text = "🔥" },
+    { name = "DiagnosticSignWarn", text = "🚧" },
     { name = "DiagnosticSignHint", text = "" },
     { name = "DiagnosticSignInfo", text = "" },
   }
@@ -73,10 +73,6 @@ M.on_attach = function(client, bufnr)
   end
 
   if client.name == "tailwindcss" then
-    if client.server_capabilities.colorProvider then
-      require "user.lsp.utils.documentcolors".buf_attach(bufnr)
-    end
-    M.capabilities.textDocument.colorProvider = { dynamicRegistration = false }
   end
 
 

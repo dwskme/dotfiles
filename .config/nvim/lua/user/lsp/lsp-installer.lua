@@ -64,10 +64,10 @@ for _, server in pairs(servers) do
   end
 
   if server == "tailwindcss" then
-    local tailwindcss_opts = require "user.lsp.settings.tailwindscss"
-    local filetypes = require('user.lsp.settings.tailwindscss').filetypes
-    local init_options = require('user.lsp.settings.tailwindscss').init_options
-    -- opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts, filetypes, init_options)
+    local tailwindcss_opts = require "user.lsp.settings.tailwindcss"
+    local filetypes = require('user.lsp.settings.tailwindcss').filetypes
+    local init_options = require('user.lsp.settings.tailwindcss').init_options
+    opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts, filetypes, init_options)
   end
 
   if server == "vuels" then

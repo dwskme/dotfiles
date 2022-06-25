@@ -13,11 +13,17 @@ null_ls.setup {
   debug = false,
   sources = {
     formatting.prettier.with {
+      filetypes = { "html", "markdown", "css" },
       extra_filetypes = { "toml" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
+    -- Shell
+    formatting.shfmt,
+    diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
+    -- cpp
+    formatting.clang_format,
     formatting.google_java_format,
     diagnostics.flake8,
     diagnostics.eslint,

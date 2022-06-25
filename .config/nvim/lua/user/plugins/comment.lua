@@ -4,7 +4,31 @@ if not status_ok then
 end
 
 comment.setup {
-  pre_hook = function(ctx)
+   padding = true,
+   ignore = nil,
+   mappings = {
+        ---Includes `gcc`, `gcb`, `gc[count]{motion}` and `gb[count]{motion}`
+        basic = true,
+        ---Includes `gco`, `gcO`, `gcA`
+        extra = true,
+        ---Includes `g>`, `g<`, `g>[count]{motion}` and `g<[count]{motion}`
+        extended = false,
+    },
+
+    toggler = {
+        ---line-comment keymap
+        line = 'gcc',
+        ---block-comment keymap
+        block = 'gbc',
+    },
+
+    opleader = {
+        --[[ ---line-comment keymap
+        line = 'gc', ]]
+        ---block-comment keymap
+        block = 'gb',
+    },
+    pre_hook = function(ctx)
     local U = require "Comment.utils"
 
     local location = nil
