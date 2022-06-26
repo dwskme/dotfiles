@@ -2,7 +2,6 @@ local M = {}
 
 M.setup = function()
   local signs = {
-
     { name = "DiagnosticSignError", text = "🔥" },
     { name = "DiagnosticSignWarn", text = "🚧" },
     { name = "DiagnosticSignHint", text = "" },
@@ -32,14 +31,8 @@ M.setup = function()
   }
 
   vim.diagnostic.config(config)
-
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-  })
-
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
-  })
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", })
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded", })
 end
 
 local function lsp_keymaps(bufnr)
@@ -67,61 +60,9 @@ M.on_attach = function(client, bufnr)
   if not status_cmp_ok then
     return
   end
-
-  if client.name == "sumneko_lua" then
+   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
-
-  if client.name == "tailwindcss" then
-  end
-
-
-  if client.name == "eslint" then
-    client.server_capabilities.documentFormattingProvider = true
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-    buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-  end
-    
-  if client.name == "tsserver" then
-    -- Modifying a server's capabilities is not recommended and is no longer
-    -- necessary thanks to the `vim.lsp.buf.format` API introduced in Neovim
-    -- 0.8. Users with Neovim 0.7 needs to uncomment below lines to make tsserver formatting work (or keep using eslint).
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-    buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-    M.capabilities.textDocument.completion.completionItem.preselectSupport = true
-    M.capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-    M.capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-    M.capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-    M.capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-    M.capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-    M.capabilities.textDocument.completion.completionItem.resolveSupport = {
-      properties = {
-        'documentation',
-        'detail',
-        'additionalTextEdits',
-      }
-    }
-    M.capabilities.textDocument.codeAction = {
-      dynamicRegistration = false,
-      codeActionLiteralSupport = {
-        codeActionKind = {
-          valueSet = {
-            "",
-            "quickfix",
-            "refactor",
-            "refactor.extract",
-            "refactor.inline",
-            "refactor.rewrite",
-            "source",
-            "source.organizeImports",
-          },
-        },
-      },
-    }
-  end
-  
 
 
   M.capabilities = vim.lsp.protocol.make_client_capabilities()

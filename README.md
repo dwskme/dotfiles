@@ -6,28 +6,51 @@
 
 
 ### List of Plugins used in this Configs:
-Alpha Nvim : This Plugins is Used for Dashboard in Neovim. 
+Alpha : This Plugins is Used for Dashboard in Neovim. 
 Nvim_Autopairs : Simple Plugins for using Autopair feature.
-Comment Nvim:  
+Comment Nvim: This is a plugin for making commenting easier. 
 Cinnamon Nvim: It is a plugins which helps with smooth scrolling.
-cmp-npm : AutoCompletetion for npm package in package.json files. :q
-cmp: Completetion Management.
-colorizer: Use to Colorize in terminal.
-commentnvim. For commenting stuff.
-dap, dap-ui, dap-virtual-text- dap-install, dap-telescope: add debug related, TODO: dab-telescope fix,
-package-info: give package.json info and can add change package dependncy from json only.
-todo-comments: todo comment highlight and quick serach
-term toggle: need to config keybinds.
-nvim-tree: file exploreer.
-nvim-gps : todo: need to add some config and setup
-nvim-lualine: need to enable gps and colors and fonts and icons
-trouble: Keybinds and default settings and colors 
+cmp, cmp-npm, cmp-lua, cmp-lsp: Completetion Management.
+Colorizer: Use to Colorize in terminal.
+dap, dap-ui, dap-virtual-text- dap-install, dap-telescope: Debugging Tools. 
+package-info: Give package.json info and can add change package dependncy from json only.
+todo-comments: Todo comment highlight and quick serach
+term-toggle: Terminal inside nvim. 
+nvim-tree: File explorer.
+nvim-gps : Indicator of project in statusbar. 
+nvim-lualine: Statusbar. 
+trouble: A quick to use diagonsticlist plugin. 
 treesitter: Highlight layer for languages.
-project: quick project switcher.
-git-signs: TODO: proper keybinds, color highlight and uses
-luasnip , friendly snippets: TODO: need to do it later.
-filetype: need to add more configs
-ts-autotag: autocolose tags for htmls
-renamer: check if renamer is working like it should and try to get to know that treesitter depreication warning source
+project: Quick project switcher.
+git-signs: A git-hepler tool.
+luasnip, friendly snippets: Snippet engine and collection. 
+filetype:  
+ts-autotag: Autocolose tags for htmls
+renamer: Goodlooking renaming tool.
+modes: highlight the slected line with color according to mode.
+lsp-status: Shows lsp status in statusbar. 
 
+
+##  Keybinds:
+
+
+
+
+
+
+
+
+## TODO:
+dab-telescope fix,
+todo-comments accessible from telescope,
+term-toggle: more keybinds and some settings,
+nvim-gps config
+lua-line setup
+trouble setup with keybinds and best uses.
+git-signs: proper keybinds and config needed.
+project: need to learn its uescases,
+luasnip: need to find more easy way of accessing snippets.
+filetype: need to learn more about it.
+check if renamer is working like it should and try to get to know that treesitter depreication warning source
+lspstatus: check if it working or not.
 
