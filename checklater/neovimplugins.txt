@@ -1,37 +1,20 @@
 -- abstract 
 
-context_vt_nvim.lua
-
 desktop-notify_nvim.lua
-
-filetype_nvim.lua
-
 formatter.lua
-
 dressing.nvim 
 
 lspkind-nvim.lua
-
 lspsaga.lua
-
 lspsignature.lua
-
 lspstatus.lua
 
-modes_nvim.lua
-
-nvim-ts-autotag.lua
-
 nvim-ts-context-commentstring.lua
-
 nvim-web-devicons.lua
 
 penvim.lua
-
 surround_nvim.lua
-
 vim-maximizer.lua
-
 vimspector.lua
 
 ------------------------https://github.com/ecosse3/nvim/tree/master/lua/plugins--------------------
@@ -51,9 +34,32 @@ lazygit neogit vim-fugitive --compare and use
 coq.nvim
 leap
 neotest
-ale
+ale-
+bufdelete.nvim
+octo
 
 https://github.com/crivotz/nv-ide/tree/master/lua/plugins
 noeclip
+
 https://github.com/jdhao/nvim-config
 check his plugin list
+firevim
+
+
+
+---colorscheme---
+nightfox.nvim
+lunarvim-colorschemes
+wal.vim
+pywal.nvim
+vim-code-dark
+vim-lighthaus
+tender.vim
+zenbones.nvim
+onenord.nvim
+neovim-ayu
+neon
+gruvbox-baby
+tokyonight.nvim
+base16-vim
+vim-colorschemes

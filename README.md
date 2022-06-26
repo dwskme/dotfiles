@@ -26,3 +26,8 @@ treesitter: Highlight layer for languages.
 project: quick project switcher.
 git-signs: TODO: proper keybinds, color highlight and uses
 luasnip , friendly snippets: TODO: need to do it later.
+filetype: need to add more configs
+ts-autotag: autocolose tags for htmls
+renamer: check if renamer is working like it should and try to get to know that treesitter depreication warning source
+
+

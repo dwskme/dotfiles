@@ -42,6 +42,7 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use { "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" } -- Have packer manage itself
+  use {	"nathom/filetype.nvim", commit = "b522628a45a17d58fc0073ffd64f9dc9530a8027"}
   use { "nvim-lua/plenary.nvim", commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" } -- Useful lua functions used by lots of plugins
   use { "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim", commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" }
@@ -61,8 +62,9 @@ return packer.startup(function(use)
   use { "folke/todo-comments.nvim",requires = "nvim-lua/plenary.nvim"}
   use { 'ChristianChiarulli/nvim-gps', after = 'nvim-treesitter' }
   use { "folke/trouble.nvim",requires = "kyazdani42/nvim-web-devicons",}
-
-
+  use { "windwp/nvim-ts-autotag", commit = "5bbdfdaa303c698f060035f37a91eaad8d2f8e27"}
+  use { "filipdutescu/renamer.nvim",branch = 'master', requires =  {"nvim-lua/plenary.nvim"} }
+  use { "mvllow/modes.nvim" , commit = "095042fca156573744f7ed542f401d02c32bdd25"}
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
   use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
