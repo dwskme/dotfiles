@@ -1,40 +1,14 @@
----roshni---
-
-LuaSnip.lua
-
-
-bubbly_nvim.lua
+-- abstract 
 
 context_vt_nvim.lua
 
-dart-vim-plugin.lua
-
 desktop-notify_nvim.lua
-
-feline_nvim.lua
 
 filetype_nvim.lua
 
-flutter-tools_nvim.lua
-
 formatter.lua
-fterm_nvim.lua
 
 dressing.nvim 
-galaxyline_nvim.lua
-
-gitblame.lua
-
-github-nvim-theme.lua
-
-
-hardline_nvim.lua
-
-impatient_nvim.lua
-
-indentLine.lua
-
-kommentary.lua
 
 lspkind-nvim.lua
 
@@ -44,11 +18,7 @@ lspsignature.lua
 
 lspstatus.lua
 
-lualine.lua
-
 modes_nvim.lua
-
-neoscroll_nvim.lua
 
 nvim-ts-autotag.lua
 
@@ -58,69 +28,32 @@ nvim-web-devicons.lua
 
 penvim.lua
 
-rooter_nvim.lua
-
-staline_nvim.lua
-
 surround_nvim.lua
-
-trouble_nvim.lua
-
-vim-floaterm.lua
 
 vim-maximizer.lua
 
-vim_commentary.lua
-
-vim_rooter.lua
-
-vim_surround.lua
-
 vimspector.lua
 
-vsnip.lua
-
-windline_nvim.lua
-
 ------------------------https://github.com/ecosse3/nvim/tree/master/lua/plugins--------------------
-
-
+git-blame
+git-worktree
 diffview
-
-lightspeed
-
-
-session-manager
-
-
-toggle-term
-
-zen
 
 
 https://github.com/crivotz/nv-ide/tree/master/lua/plugins
-
 copilot
-
 ctrlsf
-
 hlslens
-
-neoscrool
-
 ----nvchad------
 neorg
-
-truezen
-
-override
-
 ---extra---
 lazygit neogit vim-fugitive --compare and use
-----coq.nvim-----
-
-
+coq.nvim
 leap
 neotest
-diffview
 ale
+
+https://github.com/crivotz/nv-ide/tree/master/lua/plugins
+noeclip
+https://github.com/jdhao/nvim-config
+check his plugin list

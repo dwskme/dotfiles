@@ -76,7 +76,7 @@ return packer.startup(function(use)
   use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
   use { "David-Kunz/cmp-npm" ,requires = {"nvim-lua/plenary.nvim"} , commit = "4b6166c3feeaf8dae162e33ee319dc5880e44a29"}
   -- snippets
-  use { "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" } --snippet engine
+  use { "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a", after = 'nvim-cmp',wants = "friendly-snippets",} --snippet engine
   use { "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" } -- a bunch of snippets to use
 
   -- LSP
