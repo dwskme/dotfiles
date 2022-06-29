@@ -34,7 +34,7 @@ local diff = {
 }
 
 -- Gps
--- local gps = require "nvim-gps"
+local gps = require "nvim-gps"
 
 -- Config
 lualine.setup {
@@ -50,7 +50,7 @@ lualine.setup {
     lualine_b = { "branch", diff, "diagnostics" },
     lualine_c = {
       "filename",
-      -- { gps.get_location, cond = gps.is_available },
+      { gps.get_location, cond = gps.is_available },
     },
     lualine_x = { "encoding", "fileformat", "filetype" },
     lualine_y = { "progress" },

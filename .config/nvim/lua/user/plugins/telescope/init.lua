@@ -43,7 +43,7 @@ require("telescope").setup {
       require("telescope.themes").get_cursor(),
     },
     bookmarks = {
-      selected_browser = "brave",
+      selected_browser = "chrome",
       url_open_command = "open",
     },
     command_palette = {
@@ -59,8 +59,8 @@ require("telescope").setup {
       },
       {
         "Git(Hub)",
-        { " Issues", "lua require'joel.telescope'.gh_issues()", 1 },
-        { " Pulls", "lua require'joel.telescope'.gh_prs()", 1 },
+        { " Issues", "lua require'user.plugins.telescope'.gh_issues()", 1 },
+        { " Pulls", "lua require'user.plugins.telescope'.gh_prs()", 1 },
         { " Status", "lua require'telescope.builtin'.git_status()", 1 },
         { " Diff Split Vertical", ":Gvdiffsplit!", 1 },
         { " Log", "lua require'telescope.builtin'.git_commits()", 1 },
@@ -76,9 +76,9 @@ require("telescope").setup {
       },
       {
         "Notes",
-        { "Browse Notes", "lua require'joel.telescope'.browse_notes()", 1 },
-        { "Find Notes", "lua require'joel.telescope'.find_notes()", 1 },
-        { "Search/Grep Notes", "lua require'joel.telescope'.grep_notes()", 1 },
+        { "Browse Notes", "lua require'user.plugins.telescope.browse_notes()", 1 },
+        { "Find Notes", "lua require'user.plugins.telescope'.find_notes()", 1 },
+        { "Search/Grep Notes", "lua require'user.plugins.telescope'.grep_notes()", 1 },
       },
       {
         "Toggle",
@@ -100,7 +100,7 @@ require("telescope").setup {
         { "keymaps", ":lua require('telescope.builtin').keymaps()" },
         { "buffers", ":Telescope buffers" },
         { "search history", ":lua require('telescope.builtin').search_history()" },
-        { "Search TODOS", ":lua require'joel.telescope'.search_todos()" },
+        { "Search TODOS", ":lua require'user.plugins.telescope'.search_todos()" },
       },
     },
   },

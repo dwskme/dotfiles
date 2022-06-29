@@ -44,8 +44,7 @@ lsp-status: Shows lsp status in statusbar.
 dab-telescope fix,
 todo-comments accessible from telescope,
 term-toggle: more keybinds and some settings,
-nvim-gps config
-lua-line setup
+lua-line setup a setting to change theme shortcut.
 trouble setup with keybinds and best uses.
 git-signs: proper keybinds and config needed.
 project: need to learn its uescases,
@@ -53,10 +52,10 @@ luasnip: need to find more easy way of accessing snippets.
 filetype: need to learn more about it.
 check if renamer is working like it should and try to get to know that treesitter depreication warning source
 lspstatus: check if it working or not.
+wilder: check config and minify it
 
 
-
-1. add listchars either as a pplugin or in the config files
+1. add listchars either as a plugin or in the config files
 2. check some of the .vim file from the tj repos
 3. add some colorscheme and easy to preview method
 4. check for scratchpad plugin like quokka in vsocde

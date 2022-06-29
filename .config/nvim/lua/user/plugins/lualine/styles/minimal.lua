@@ -8,7 +8,7 @@ end
 local colors = require("user.colors").get()
 
 -- Gps
--- local gps = require "nvim-gps"
+local gps = require "nvim-gps"
 
 -- Diff Source
 local function diff_source()
@@ -77,7 +77,7 @@ lualine.setup {
   sections = {
     lualine_a = { mode },
     lualine_b = {
-      -- { gps.get_location, cond = gps.is_available },
+      { gps.get_location, cond = gps.is_available },
       diff,
       "diagnostics",
     },

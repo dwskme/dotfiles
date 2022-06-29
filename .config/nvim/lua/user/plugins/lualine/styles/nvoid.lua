@@ -8,7 +8,7 @@ end
 local colors = require("user.colors").get()
 
 -- Gps
--- local gps = require "nvim-gps"
+local gps = require "nvim-gps"
 
 -- Diff Source
 local function diff_source()
@@ -124,10 +124,10 @@ ins_left {
 }
 
 -- Nvim Gps
--- ins_left {
---   gps.get_location,
---   cond = gps.is_available,
--- }
+ins_left {
+  gps.get_location,
+  cond = gps.is_available,
+}
 
 -- Git Branch
 ins_left {

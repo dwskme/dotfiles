@@ -11,7 +11,7 @@ local function diff_source()
 end
 
 -- Gps
--- local gps = require "nvim-gps"
+local gps = require "nvim-gps"
 
 -- LuaLine
 local present1, lualine = pcall(require, "lualine")
@@ -104,10 +104,10 @@ ins_left {
 }
 
 -- Nvim Gps
--- ins_left {
---   gps.get_location,
---   cond = gps.is_available,
--- }
+ins_left {
+  gps.get_location,
+  cond = gps.is_available,
+}
 
 -- diff
 ins_left {

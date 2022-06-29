@@ -11,7 +11,7 @@ key_map(
 -- Search through your Neovim related todos
 key_map("n", "<leader>st", ":lua require'user.plugins.telescope'.search_todos()<CR>", { noremap = true, silent = true })
 
--- search Brave bookmarks & go
+-- search chrome bookmarks & go
 key_map(
   "n",
   "<space>b",
@@ -86,7 +86,6 @@ key_map(
 key_map("n", "gl", [[<Cmd>lua require'telescope.builtin'.git_commits()<CR>]], { noremap = true, silent = true })
 -- git_status - <tab> to toggle staging
 key_map("n", "gs", [[<Cmd>lua require'telescope.builtin'.git_status()<CR>]], { noremap = true, silent = true })
-
 -- registers picker
 key_map("n", "<space>r", [[<Cmd>lua require'telescope.builtin'.registers()<CR>]], { noremap = true, silent = true })
 

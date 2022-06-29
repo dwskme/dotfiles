@@ -17,7 +17,7 @@ if not present1 then
 end
 
 -- Gps
--- local gps = require "nvim-gps"
+local gps = require "nvim-gps"
 
 -- Colors
 local colors = require("user.colors").get()
@@ -131,11 +131,11 @@ ins_left {
   color = { fg = colors.white },
 }
 --
--- -- Nvim gps
--- ins_left {
---   gps.get_location,
---   cond = gps.is_available,
--- }
+-- Nvim gps
+ins_left {
+  gps.get_location,
+  cond = gps.is_available,
+}
 
 -- Git diff
 ins_left {

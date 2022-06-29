@@ -43,18 +43,18 @@ return packer.startup(function(use)
   -- My plugins here
   use { "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" } -- Have packer manage itself
   use {	"nathom/filetype.nvim", commit = "b522628a45a17d58fc0073ffd64f9dc9530a8027"}
+  use { "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" }
   use { "nvim-lua/plenary.nvim", commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" } -- Useful lua functions used by lots of plugins
   use { "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim", commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" }
   use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "88343753dbe81c227a1c1fd2c8d764afb8d36269" }
   use { "kyazdani42/nvim-web-devicons", commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" }
-  use { "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" }
-  use { "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" }
-  use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }
-  use { "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" }
+  use { "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" }   -- File Explorer 
+  use { "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" }  --tabs management
+  use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }  --delete buffers without closing your windows or messing up your layout.
+  use { "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" } --statusline vim
   use { "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" }
   use { "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" }
-  use { "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" }
   use { "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" }
   use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
   use { "declancm/cinnamon.nvim" ,commit= "da5880d7fdd10cfa07df5c96b2bf22ff5d264019" }
@@ -65,10 +65,17 @@ return packer.startup(function(use)
   use { "windwp/nvim-ts-autotag", commit = "5bbdfdaa303c698f060035f37a91eaad8d2f8e27"}
   use { "filipdutescu/renamer.nvim",branch = 'master', requires =  {"nvim-lua/plenary.nvim"} }
   use { "mvllow/modes.nvim" , commit = "095042fca156573744f7ed542f401d02c32bdd25"}
+  use { "max397574/better-escape.nvim", commit ="d5ee0cef56a7e41a86048c14f25e964876ac20c1"}
+  use { "gelguy/wilder.nvim",commit="86f5fb0962bc5954babf267ded6b144d992aef85"  }
+  use { "folke/which-key.nvim"}
+  use { "rcarriga/nvim-notify"} 
+  use { "simrat39/symbols-outline.nvim"}
+
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
   use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
   use { "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6"}
+  use { "catppuccin/nvim",as = "catppuccin"}
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
   use { "hrsh7th/cmp-buffer", commit = "62fc67a2b0205136bc3e312664624ba2ab4a9323" } -- buffer completions
@@ -88,24 +95,21 @@ return packer.startup(function(use)
   use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
   use { "nvim-lua/lsp-status.nvim", commit ="4073f766f1303fb602802075e558fe43e382cc92"}
   use { "onsails/lspkind.nvim",commit= "57e5b5dfbe991151b07d272a06e365a77cc3d0e7"}
+  
+
   -- Telescope
   use { "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" }
   -- Telescope extensions
-  use "cljoly/telescope-repo.nvim"
+  use { "cljoly/telescope-repo.nvim"}
   use { "nvim-telescope/telescope-file-browser.nvim" }
   use { "nvim-telescope/telescope-ui-select.nvim" }
-  use "dhruvmanila/telescope-bookmarks.nvim"
-  use "nvim-telescope/telescope-github.nvim"
+  use { "dhruvmanila/telescope-bookmarks.nvim"}
+  use { "nvim-telescope/telescope-github.nvim"}
   -- Trying command palette
   use { "LinArcX/telescope-command-palette.nvim" }
-  use {
-    "AckslD/nvim-neoclip.lua",
-    config = function()
-      require("neoclip").setup()
-    end,
-  }
+  use { "AckslD/nvim-neoclip.lua",config = function() require("neoclip").setup()end,}
   use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-  use "jvgrootveld/telescope-zoxide"
+  use { "jvgrootveld/telescope-zoxide"}
 
 
   -- Treesitter
@@ -123,6 +127,13 @@ return packer.startup(function(use)
   use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
   use { "nvim-telescope/telescope-dap.nvim", requires = {"nvim-telescope/telescope.nvim"}, commit = "b4134fff5cbaf3b876e6011212ed60646e56f060"}
   use { "theHamsta/nvim-dap-virtual-text", commit = "10368a11d175633f00ee6afb49708e42ae70ae7d"}
+
+
+  -- Test 
+  -- use {"teto/vim-listchars"}
+  use {"metakirby5/codi.vim"}
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
