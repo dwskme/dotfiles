@@ -9,18 +9,11 @@ lspsaga.lua
 lspsignature.lua
 lspstatus.lua
 
-nvim-ts-context-commentstring.lua
-nvim-web-devicons.lua
 
 penvim.lua
 surround_nvim.lua
 vim-maximizer.lua
 vimspector.lua
-
-------------------------https://github.com/ecosse3/nvim/tree/master/lua/plugins--------------------
-git-blame
-git-worktree
-diffview
 
 
 https://github.com/crivotz/nv-ide/tree/master/lua/plugins
@@ -30,9 +23,9 @@ hlslens
 ----nvchad------
 neorg
 ---extra---
-lazygit neogit vim-fugitive --compare and use
+lazygit neogit compare and use 
 coq.nvim
-leap
+leap or lightspeed
 neotest
 ale-
 bufdelete.nvim
