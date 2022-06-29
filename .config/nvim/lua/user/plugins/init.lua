@@ -1,7 +1,7 @@
 require "user.plugins.colorscheme"
 require "user.plugins.plugins"
 require "user.plugins.cmp"
-require "user.plugins.telescope"
+require "user.plugins.telescope.init"
 require "user.plugins.treesitter"
 require "user.plugins.autopairs"
 require "user.plugins.comment"

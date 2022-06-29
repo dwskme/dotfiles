@@ -60,7 +60,7 @@ return packer.startup(function(use)
   use { "declancm/cinnamon.nvim" ,commit= "da5880d7fdd10cfa07df5c96b2bf22ff5d264019" }
   use { "vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim"}
   use { "folke/todo-comments.nvim",requires = "nvim-lua/plenary.nvim"}
-  use { 'ChristianChiarulli/nvim-gps', after = 'nvim-treesitter' }
+  use { 'ChristianChiarulli/nvim-gps' }
   use { "folke/trouble.nvim",requires = "kyazdani42/nvim-web-devicons",}
   use { "windwp/nvim-ts-autotag", commit = "5bbdfdaa303c698f060035f37a91eaad8d2f8e27"}
   use { "filipdutescu/renamer.nvim",branch = 'master', requires =  {"nvim-lua/plenary.nvim"} }
@@ -90,6 +90,23 @@ return packer.startup(function(use)
   use { "onsails/lspkind.nvim",commit= "57e5b5dfbe991151b07d272a06e365a77cc3d0e7"}
   -- Telescope
   use { "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" }
+  -- Telescope extensions
+  use "cljoly/telescope-repo.nvim"
+  use { "nvim-telescope/telescope-file-browser.nvim" }
+  use { "nvim-telescope/telescope-ui-select.nvim" }
+  use "dhruvmanila/telescope-bookmarks.nvim"
+  use "nvim-telescope/telescope-github.nvim"
+  -- Trying command palette
+  use { "LinArcX/telescope-command-palette.nvim" }
+  use {
+    "AckslD/nvim-neoclip.lua",
+    config = function()
+      require("neoclip").setup()
+    end,
+  }
+  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+  use "jvgrootveld/telescope-zoxide"
+
 
   -- Treesitter
   use {

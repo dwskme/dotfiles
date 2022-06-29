@@ -54,3 +54,11 @@ filetype: need to learn more about it.
 check if renamer is working like it should and try to get to know that treesitter depreication warning source
 lspstatus: check if it working or not.
 
+
+
+1. add listchars either as a pplugin or in the config files
+2. check some of the .vim file from the tj repos
+3. add some colorscheme and easy to preview method
+4. check for scratchpad plugin like quokka in vsocde
+5. order of Completetion lsp,buffer, snippets
+  
