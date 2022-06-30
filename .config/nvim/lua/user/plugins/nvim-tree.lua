@@ -3,6 +3,9 @@ if not status_ok then
   return
 end
 
+local utils = require('user.utils')
+local nvim_tree_events = require('nvim-tree.events')
+local bufferline_state = require('bufferline.state')
 
 local keymappings = {
   { key = {"<CR>", "o", "<2-LeftMouse>"}, action = "edit" },
@@ -43,7 +46,7 @@ local keymappings = {
   { key = "W",                            action = "collapse_all" },
   { key = "S",                            action = "search_node" }
 }
-nvim_tree.setup { 
+nvim_tree.setup {
   auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = false,
@@ -199,3 +202,12 @@ nvim_tree.setup {
   },
 } -- END_DEFAULT_OPTS
 
+-- FIXME  : Need to fix this from  https://github.com/ecosse3/nvim
+-- local TREE_WIDTH = 40
+-- nvim_tree_events.on_tree_open(function ()
+--     bufferline_state.set_offset(40+ 1 .. 'File Explorer')
+-- end)
+--
+-- nvim_tree_events.on_tree_close(function ()
+--     bufferline_state.set_offset(0)
+-- end)

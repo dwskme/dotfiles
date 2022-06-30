@@ -59,19 +59,20 @@ gitsigns.setup {
     -- ╰──────────────────────────────────────────────────────────╯
 
     -- Navigation
-    map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
-    map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
+    -- FIXME : fix this later according to keybinds   
+    -- map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
+    -- map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
 
     -- Actions
-    map({ 'n', 'v' }, '<leader>ghs', gs.stage_hunk)
-    map({ 'n', 'v' }, '<leader>ghr', gs.reset_hunk)
-    map('n', '<leader>ghS', gs.stage_buffer)
-    map('n', '<leader>ghu', gs.undo_stage_hunk)
-    map('n', '<leader>ghR', gs.reset_buffer)
-    map('n', '<leader>ghp', gs.preview_hunk)
-    map('n', '<leader>gm', function() gs.blame_line { full = true } end)
-    map('n', '<leader>ghd', gs.diffthis)
-    map('n', '<leader>ght', gs.toggle_deleted)
+    map({ 'n', 'v' }, '<leader>gs', gs.stage_hunk)
+    map({ 'n', 'v' }, '<leader>gr', gs.reset_hunk)
+    map('n', '<leader>gu', gs.undo_stage_hunk)
+    map('n', '<leader>gS', gs.stage_buffer)
+    map('n', '<leader>gR', gs.reset_buffer)
+    map('n', '<leader>gp', gs.preview_hunk)
+    map('n', '<leader>gl', function() gs.blame_line { full = true } end)
+    map('n', '<leader>gd', gs.diffthis)
+    map('n', '<leader>gt', gs.toggle_deleted)
 
     -- Text object
     map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')

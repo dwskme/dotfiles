@@ -8,7 +8,10 @@ installed omf
 for tmux follow brainmeetcoding.com/ .. james guide to tmux manual...
 
 
-
+#Installing miniconda
+paru -S miniconda
+#Installing Eyecandies
+npm install -g mapscii
 
 1. rofi menu to change theme for alcritty, polybar, system xresource, rofi theme, gtk-3, notification
 2. either can change all at once or individual 

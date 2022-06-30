@@ -1,17 +1,12 @@
 -- abstract 
-
 desktop-notify_nvim.lua
 formatter.lua
 dressing.nvim 
-
 lspkind-nvim.lua
 lspsaga.lua
 lspsignature.lua
 lspstatus.lua
-
 sandwidch or vim-surround
-
-
 https://github.com/crivotz/nv-ide/tree/master/lua/plugins
 copilot
 ctrlsf
