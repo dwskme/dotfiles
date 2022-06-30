@@ -1,11 +1,30 @@
+# DWSK-PDE 
+This is reuslt of countless weeks worth of research from many awesome neovim configs provided by various creators. The major takeaway i take from this journey of switching to neovim and seraching for a perfect config is there exist no thing such as a perfect settings.
+
+## "Perfectionism is self abuse of the highest order" -- Annnie Wilson Schaef.
+
+**Table of Contents**
+
+[TOCM]
+
+[TOC]
+
+### Features
+- Eyecandy themes, icons, statusbar and more...
+- Easy Switch of themes, bars and icons according to the choice.
+- LSP, Formatting, Linting Support for Development of: JS/TS, React, Python, Rust, C/C++, Go out of the box.
+- Easy KeyBindings and Configs;
+- No Breaking chages and packages are based on commits and will update according to the your own needs.
+- Support for Markdown, Orgmode ...etc.
+- Optimized and LazyLoaded for fast Loadspeed.
 
 
-### This is reuslt of weeks of countless research of countless awesome nvim configs from individual developers to dedicated config creaters. I made this config combining snippets of configs for themes to plugins settings and I donot claim all the settings. The major takeaway i take from this journey of switching to neovim and seraching for a perfect config is there exist no thing such as a perfect settings. 
-
-### "Perfectionism is self abuse of the highest order" -- Annnie Wilson Schaef.
+###  Keybinds:
 
 
-### List of Plugins used in this Configs:
+
+### Plugins
+[Packer](https://github.com/packer.nvim)
 Alpha : This Plugins is Used for Dashboard in Neovim. 
 Nvim_Autopairs : Simple Plugins for using Autopair feature.
 Comment Nvim: This is a plugin for making commenting easier. 
@@ -31,7 +50,6 @@ modes: highlight the slected line with color according to mode.
 lsp-status: Shows lsp status in statusbar. 
 
 
-##  Keybinds:
 
 
 
@@ -40,7 +58,7 @@ lsp-status: Shows lsp status in statusbar.
 
 
 
-## TODO:
+### Fixes:
 dab-telescope fix,
 todo-comments accessible from telescope,
 term-toggle: more keybinds and some settings,
@@ -55,6 +73,7 @@ lspstatus: check if it working or not.
 wilder: check config and minify it
 
 
+### Up-Coming Features
 1. add listchars either as a plugin or in the config files
 2. check some of the .vim file from the tj repos
 3. add some colorscheme and easy to preview method

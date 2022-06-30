@@ -9,11 +9,7 @@ lspsaga.lua
 lspsignature.lua
 lspstatus.lua
 
-
-penvim.lua
-surround_nvim.lua
-vim-maximizer.lua
-vimspector.lua
+sandwidch or vim-surround
 
 
 https://github.com/crivotz/nv-ide/tree/master/lua/plugins
@@ -24,12 +20,11 @@ hlslens
 neorg
 ---extra---
 lazygit neogit compare and use 
-coq.nvim
-leap or lightspeed
-neotest
-ale-
-bufdelete.nvim
 octo
+coq.nvim or nvim_cmp
+leap or lightspeed
+neotest or vimspector
+ale-
 
 https://github.com/crivotz/nv-ide/tree/master/lua/plugins
 noeclip
