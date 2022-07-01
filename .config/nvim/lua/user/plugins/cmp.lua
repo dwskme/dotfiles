@@ -112,7 +112,14 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "nvim_lua" },
 		{ name = "path" },
-	},
+    { name = 'treesitter' },
+    { name = 'calc' },
+    { name = 'git' },
+    { name = 'rg'},
+    { name = 'cmdline' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'emoji' },
+
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
@@ -124,4 +131,5 @@ cmp.setup({
 	experimental = {
 		ghost_text = true,
 	},
+}
 })

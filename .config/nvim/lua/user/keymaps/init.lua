@@ -54,12 +54,37 @@ keymap("v", "p", '"_dP', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Terminal Settings
+keymap("t","<esc>","<C-\\><C-n>",opts) -- Terminal normal mode
+keymap("t","jk","<C-\\><C-n>",opts) -- Terminal normal mode
+keymap("t","<C-h>","<c-\\><c-n><c-w>h",opts) -- Terminal window navigation
+keymap("t","<C-j>","<c-\\><c-n><c-w>j",opts)
+keymap("t","<C-k>","<c-\\><c-n><c-w>k",opts)
+keymap("t","<C-l>","<c-\\><c-n><c-w>l",opts)
+
+
 -- Plugins --
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+
+-- Renamer
+keymap('n', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', opts)
+keymap('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', opts)
+
+--Toggle Terminal
+
+keymap("n", "<leader>xn", "<cmd>lua _NODE_TOGGLE()<CR>", opts)
+keymap("n", "<leader>xc", "<cmd>lua _NCDU_TOGGLE_TOGGLE()<CR>", opts)
+keymap("n", "<leader>xh", "<cmd>lua _HTOP_TOGGLE()<CR>", opts)
+keymap("n", "<leader>xp", "<cmd>lua _PYTHON_TOGGLE()<CR>", opts)
+keymap("n", "<leader>xr", "<cmd>lua _RANGER_TOGGLE()<CR>", opts)
+
+
+
+
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)

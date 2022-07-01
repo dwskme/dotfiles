@@ -1,4 +1,4 @@
-# DWSK-PDE 
+# DWSK-PDE
 This is reuslt of countless weeks worth of research from many awesome neovim configs provided by various creators. The major takeaway i take from this journey of switching to neovim and seraching for a perfect config is there exist no thing such as a perfect settings.
 
 ## "Perfectionism is self abuse of the highest order" -- Annnie Wilson Schaef.
@@ -72,28 +72,32 @@ Note that,
 <!-- | <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    |  𝐈   | Navigate completion-menu            | -->
 <!-- | <kbd>Enter</kbd>                                                                         |  𝐈   | Select completion or expand snippet | -->
 <!-- | <kbd>Up</kbd>or <kbd>Down</kbd>                                                          |  𝐈   | Movement in completion pop-up       | -->
-<!-- | <kbd>]</kbd>+<kbd>d</kbd>                                                                |  𝐍   | Next diagnostic                     | -->
-<!-- | <kbd>[</kbd>+<kbd>d</kbd>                                                                |  𝐍   | Previous diagnostic                 | -->
-<!-- | <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>j</kbd> or <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>k</kbd> |  𝐍   | Next/previous LSP diagnostic        | -->
 <!-- | <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>r</kbd>                                               |  𝐍   | replace current word in project     | -->
 <!-- | <kbd>Ctrl</kbd>+<kbd>e</kbd>                                                             |  𝐈   | Close pop-up                        | -->
 <!-- | <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    | 𝐈 𝐒  | Navigate snippet placeholders       | -->
-<!-- | <kbd>Space</kbd>+<kbd>l</kbd>                                                            |  𝐍   | keybindings for lsp                 | -->
-<!-- | <kbd>g</kbd>+<kbd>a</kbd>                                                                |  𝐍   | code actions                        | -->
-<!-- | <kbd>g</kbd>+<kbd>A</kbd>                                                                |  𝐍   | codelens actions                    | -->
 | <kbd>g</kbd>+<kbd>d</kbd>                                                                |  𝐍   | goto definition                     |
-<!-- | <kbd>g</kbd>+<kbd>t</kbd>                                                                |  𝐍   | goto type definition                | -->
+| <kbd>g</kbd>+<kbd>t</kbd>                                                                |  𝐍   | goto type definition                |
 | <kbd>g</kbd>+<kbd>D</kbd>                                                                |  𝐍   | goto declaration                    |
 | <kbd>g</kbd>+<kbd>I</kbd>                                                                |  𝐍   | goto implementation                 |
 <!-- | <kbd>g</kbd>+<kbd>p</kbd>                                                                |  𝐍   | peek implementation                 | -->
 | <kbd>g</kbd>+<kbd>r</kbd>                                                                |  𝐍   | goto references                     |
+| <kbd>g</kbd>+<kbd>f</kbd>                                                                |  𝐍   | open diagnostic float               |
 | <kbd>g</kbd>+<kbd>s</kbd>                                                                |  𝐍   | show signature help                 |
+| <kbd>K</kbd>                                                                             |  𝐍   | Lsp Hover                           |
+| <kbd>leader</kbd>+<kbd>lr</kbd>                                                          |  𝐍   | lsp rename                          |
+| <kbd>leader</kbd>+<kbd>li</kbd>                                                          |  𝐍   | lsp info                            |
+| <kbd>leader</kbd>+<kbd>lI</kbd>                                                          |  𝐍   | lsp install info                    |
+| <kbd>leader</kbd>+<kbd>la</kbd>                                                          |  𝐍   | code actions                        |
+| <kbd>leader</kbd>+<kbd>lq</kbd>                                                          |  𝐍   | diagonstic loclist                  |
+| <kbd>leader</kbd>+<kbd>j</kbd>                                                           |  𝐍   | Next diagnostic                     |
+| <kbd>leader</kbd>+<kbd>k</kbd>                                                           |  𝐍   | Previous diagnostic                 |
 
 
-### Plugin: Symbol Outline 
+
+### Plugin: Symbol Outline
 
 | Key                                        | Mode | Action                              |
-| ------------------------------------------ | :--: | ----------------------------        | 
+| ------------------------------------------ | :--: | ----------------------------        |
 | <kbd>Esc/q</kbd>                           |  𝐍   | Close Outline                       |
 | <kbd>Enter</kbd>                           |  𝐍   | Go to location                      |
 | <kbd>o</kbd>                               |  𝐍   | Go to location without loosing focus|
@@ -271,29 +275,29 @@ Remaning: -- Text object -- map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR
 
 ### Plugins
 [Packer](https://github.com/packer.nvim)
-Alpha : This Plugins is Used for Dashboard in Neovim. 
+Alpha : This Plugins is Used for Dashboard in Neovim.
 Nvim_Autopairs : Simple Plugins for using Autopair feature.
-Comment Nvim: This is a plugin for making commenting easier. 
+Comment Nvim: This is a plugin for making commenting easier.
 Cinnamon Nvim: It is a plugins which helps with smooth scrolling.
 cmp, cmp-npm, cmp-lua, cmp-lsp: Completetion Management.
 Colorizer: Use to Colorize in terminal.
-dap, dap-ui, dap-virtual-text- dap-install, dap-telescope: Debugging Tools. 
+dap, dap-ui, dap-virtual-text- dap-install, dap-telescope: Debugging Tools.
 package-info: Give package.json info and can add change package dependncy from json only.
 todo-comments: Todo comment highlight and quick serach
-term-toggle: Terminal inside nvim. 
+term-toggle: Terminal inside nvim.
 nvim-tree: File explorer.
-nvim-gps : Indicator of project in statusbar. 
-nvim-lualine: Statusbar. 
-trouble: A quick to use diagonsticlist plugin. 
+nvim-gps : Indicator of project in statusbar.
+nvim-lualine: Statusbar.
+trouble: A quick to use diagonsticlist plugin.
 treesitter: Highlight layer for languages.
 project: Quick project switcher.
 git-signs: A git-hepler tool.
-luasnip, friendly snippets: Snippet engine and collection. 
-filetype:  
+luasnip, friendly snippets: Snippet engine and collection.
+filetype:
 ts-autotag: Autocolose tags for htmls
 renamer: Goodlooking renaming tool.
 modes: highlight the slected line with color according to mode.
-lsp-status: Shows lsp status in statusbar. 
+lsp-status: Shows lsp status in statusbar.
 
 
 
@@ -325,4 +329,4 @@ wilder: check config and minify it
 3. add some colorscheme and easy to preview method
 4. check for scratchpad plugin like quokka in vsocde
 5. order of Completetion lsp,buffer, snippets
-  
+

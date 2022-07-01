@@ -1,5 +1,5 @@
 local status_ok, renamer = pcall(require, 'renamer')
-if not status_ok 
+if not status_ok
 then
   return
 end
@@ -52,9 +52,3 @@ renamer.setup {
 		['<c-r>'] = mappings_utils.redo,
 	},
 }
-
--- to rename
-local options = {noremap = true, silent = true}
-local keymap = vim.api.nvim_set_keymap
-keymap('n', '<Space>rn', '<cmd>lua require("renamer").rename()<cr>', options)
-keymap('v', '<Space>rn', '<cmd>lua require("renamer").rename()<cr>', options)
