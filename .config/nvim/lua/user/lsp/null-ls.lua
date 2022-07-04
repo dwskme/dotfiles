@@ -24,7 +24,7 @@ null_ls.setup {
     diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
     -- cpp
     formatting.clang_format,
-  
+
     formatting.google_java_format,
     diagnostics.flake8,
     diagnostics.eslint,

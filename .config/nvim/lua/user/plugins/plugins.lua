@@ -66,7 +66,7 @@ return packer.startup(function(use)
   use { "filipdutescu/renamer.nvim",branch = 'master', requires =  {"nvim-lua/plenary.nvim"} }
   use { "mvllow/modes.nvim" , commit = "095042fca156573744f7ed542f401d02c32bdd25"}
   use { "max397574/better-escape.nvim", commit ="d5ee0cef56a7e41a86048c14f25e964876ac20c1"}
-  -- use { "gelguy/wilder.nvim",commit="86f5fb0962bc5954babf267ded6b144d992aef85"  }
+  use { "gelguy/wilder.nvim",commit="86f5fb0962bc5954babf267ded6b144d992aef85" ,setup = [[vim.cmd('packadd wilder.nvim')]]}
   use { "folke/which-key.nvim"}
   use { "rcarriga/nvim-notify"}
   use { "simrat39/symbols-outline.nvim"}
@@ -88,7 +88,6 @@ return packer.startup(function(use)
   use { "hrsh7th/cmp-calc"}
   use { "ray-x/cmp-treesitter"}
   use { "lukas-reineke/cmp-rg"}
-  use { "hrsh7th/cmp-cmdline"}
   use { "hrsh7th/cmp-nvim-lsp-signature-help"}
   use { "hrsh7th/cmp-emoji"}
 

@@ -3,7 +3,7 @@ if not lspkind_imported_ok then
   return
 end
 
-lspkind.init({    
+lspkind.init({
   -- defines how annotations are shown
   -- default: symbol
   -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
