@@ -66,16 +66,24 @@ return packer.startup(function(use)
   use { "filipdutescu/renamer.nvim",branch = 'master', requires =  {"nvim-lua/plenary.nvim"} }
   use { "mvllow/modes.nvim" , commit = "095042fca156573744f7ed542f401d02c32bdd25"}
   use { "max397574/better-escape.nvim", commit ="d5ee0cef56a7e41a86048c14f25e964876ac20c1"}
-  use { "gelguy/wilder.nvim",commit="86f5fb0962bc5954babf267ded6b144d992aef85" ,setup = [[vim.cmd('packadd wilder.nvim')]]}
+  use { "gelguy/wilder.nvim",commit="86f5fb0962bc5954babf267ded6b144d992aef85" }
   use { "folke/which-key.nvim"}
   use { "rcarriga/nvim-notify"}
   use { "simrat39/symbols-outline.nvim"}
+  use {"machakann/vim-sandwich" }
+  use {"liuchengxu/vista.vim" }
+  use {"Raimondi/delimitMate" } --check this plugin need or not cuz its not been update . serach its alternative
+  use { "danymat/neogen", config = function() require('neogen').setup {} end, requires = "nvim-treesitter/nvim-treesitter" }
+  use { 'dstein64/vim-startuptime' }
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
   use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
   use { "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6"}
   use { "catppuccin/nvim",as = "catppuccin"}
+  use { "EdenEast/nightfox.nvim"}
+  use { "cocopon/iceberg.vim"}
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
   use { "hrsh7th/cmp-buffer", commit = "62fc67a2b0205136bc3e312664624ba2ab4a9323" } -- buffer completions

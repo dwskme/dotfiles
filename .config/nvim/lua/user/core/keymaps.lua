@@ -81,6 +81,7 @@ keymap("n", "<leader>xc", "<cmd>lua _NCDU_TOGGLE_TOGGLE()<CR>", opts)
 keymap("n", "<leader>xh", "<cmd>lua _HTOP_TOGGLE()<CR>", opts)
 keymap("n", "<leader>xp", "<cmd>lua _PYTHON_TOGGLE()<CR>", opts)
 keymap("n", "<leader>xr", "<cmd>lua _RANGER_TOGGLE()<CR>", opts)
+keymap("n", "<leader>xt", ":ToggleTerm<CR>", opts)
 
 
 

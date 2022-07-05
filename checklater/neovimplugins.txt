@@ -12,6 +12,7 @@ https://github.com/crivotz/nv-ide/tree/master/lua/plugins
 copilot
 ctrlsf
 hlslens
+
 ----nvchad------
 neorg
 ---extra---
@@ -21,6 +22,11 @@ coq.nvim or nvim_cmp
 leap or lightspeed
 neotest or vimspector
 ale-
+tversteeg/registers.nvim'
+ThePrimeagen/refactoring.nvim
+lukas-reineke/headlines.nvim
+ThemerCorp/themer.lua
+
 
 https://github.com/crivotz/nv-ide/tree/master/lua/plugins
 noeclip

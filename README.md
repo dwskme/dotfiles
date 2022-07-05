@@ -48,7 +48,7 @@ Note that,
 <!-- | <kbd>Space</kbd>+<kbd>'</kbd>                                 |  𝐍   | Open marks          | <small>which-key marks</small>                | -->
 <!-- | <kbd>Space</kbd>+<kbd>z</kbd>                                 |  𝐍   | Zen mode            | <small>zen-mode.nvim</small>                  | -->
 <!-- | <kbd>Space</kbd>+<kbd>P</kbd>                                 |  𝐍   | Projects            | <small>project.nvim</small>                   | -->
-<!-- | <kbd>Ctrl</kbd>+<kbd>\</kbd>                                  |  𝐈   | Open terminal       | <small>toggleterm.nvim</small>                | -->
+| <kbd>Ctrl</kbd>+<kbd>xt</kbd>                                  |  𝐈   | Open terminal       | <small>toggleterm.nvim</small>                |
 <!-- | <kbd>Ctrl</kbd>+<kbd>s</kbd>                                  |  𝐈   | Show signature help | <small>`vim.lsp.buf.signature_help()`</small> | -->
 <!-- | <kbd>Alt</kbd>+<kbd>s</kbd>                                   |  𝐈   | Snippet selection   | <small>Telescope luasnip extension</small>    | -->
 <!-- | <kbd>Space</kbd>+<kbd>C</kbd> or <kbd>Ctrl</kbd>+<kbd>P</kbd> |  𝐍   | Command Palette     | <small>Telescope command_center</small>       | -->
@@ -69,12 +69,12 @@ Note that,
 
 | Key                                                                                      | Mode | Action                              |
 | ---------------------------------------------------------------------------------------- | :--: | ----------------------------------- |
-<!-- | <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    |  𝐈   | Navigate completion-menu            | -->
-<!-- | <kbd>Enter</kbd>                                                                         |  𝐈   | Select completion or expand snippet | -->
-<!-- | <kbd>Up</kbd>or <kbd>Down</kbd>                                                          |  𝐈   | Movement in completion pop-up       | -->
+| <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    |  𝐈   | Navigate completion-menu            |
+| <kbd>Enter</kbd>                                                                         |  𝐈   | Select completion or expand snippet |
+| <kbd>Up</kbd>or <kbd>Down</kbd>                                                          |  𝐈   | Movement in completion pop-up       |
 <!-- | <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>r</kbd>                                               |  𝐍   | replace current word in project     | -->
-<!-- | <kbd>Ctrl</kbd>+<kbd>e</kbd>                                                             |  𝐈   | Close pop-up                        | -->
-<!-- | <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    | 𝐈 𝐒  | Navigate snippet placeholders       | -->
+| <kbd>Ctrl</kbd>+<kbd>e</kbd>                                                             |  𝐈   | Close pop-up                        |
+| <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    | 𝐈 𝐒  | Navigate snippet placeholders       |
 | <kbd>g</kbd>+<kbd>d</kbd>                                                                |  𝐍   | goto definition                     |
 | <kbd>g</kbd>+<kbd>t</kbd>                                                                |  𝐍   | goto type definition                |
 | <kbd>g</kbd>+<kbd>D</kbd>                                                                |  𝐍   | goto declaration                    |
@@ -324,9 +324,7 @@ wilder: check config and minify it
 
 
 ### Up-Coming Features
-1. add listchars either as a plugin or in the config files
 2. check some of the .vim file from the tj repos
 3. add some colorscheme and easy to preview method
 4. check for scratchpad plugin like quokka in vsocde
 5. order of Completetion lsp,buffer, snippets
-
