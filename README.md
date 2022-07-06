@@ -44,11 +44,11 @@ Note that,
 | <kbd>Space</kbd>+<kbd>f</kbd>                                 |  𝐍   | Open file finder    | <small>Telescope</small>                      |
 | <kbd>Space</kbd>+<kbd>h</kbd>                                 |  𝐍   | Remove highlight    | <small>`nohlsearch<`</small>                  |
 | <kbd>Space</kbd>+<kbd>/</kbd>                                 |  𝐍   | Toggle comment      | <small>Comment.nvim</small>                   |
+| <kbd>Ctrl</kbd>+<kbd>xt</kbd>                                  |  𝐈   | Open terminal       | <small>toggleterm.nvim</small>                |
 <!-- | <kbd>Space</kbd>+<kbd>?</kbd>                                 |  𝐍   | Open cheats         | <small>cheat.sh</small>                       | -->
 <!-- | <kbd>Space</kbd>+<kbd>'</kbd>                                 |  𝐍   | Open marks          | <small>which-key marks</small>                | -->
 <!-- | <kbd>Space</kbd>+<kbd>z</kbd>                                 |  𝐍   | Zen mode            | <small>zen-mode.nvim</small>                  | -->
 <!-- | <kbd>Space</kbd>+<kbd>P</kbd>                                 |  𝐍   | Projects            | <small>project.nvim</small>                   | -->
-| <kbd>Ctrl</kbd>+<kbd>xt</kbd>                                  |  𝐈   | Open terminal       | <small>toggleterm.nvim</small>                |
 <!-- | <kbd>Ctrl</kbd>+<kbd>s</kbd>                                  |  𝐈   | Show signature help | <small>`vim.lsp.buf.signature_help()`</small> | -->
 <!-- | <kbd>Alt</kbd>+<kbd>s</kbd>                                   |  𝐈   | Snippet selection   | <small>Telescope luasnip extension</small>    | -->
 <!-- | <kbd>Space</kbd>+<kbd>C</kbd> or <kbd>Ctrl</kbd>+<kbd>P</kbd> |  𝐍   | Command Palette     | <small>Telescope command_center</small>       | -->
@@ -72,14 +72,12 @@ Note that,
 | <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    |  𝐈   | Navigate completion-menu            |
 | <kbd>Enter</kbd>                                                                         |  𝐈   | Select completion or expand snippet |
 | <kbd>Up</kbd>or <kbd>Down</kbd>                                                          |  𝐈   | Movement in completion pop-up       |
-<!-- | <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>r</kbd>                                               |  𝐍   | replace current word in project     | -->
 | <kbd>Ctrl</kbd>+<kbd>e</kbd>                                                             |  𝐈   | Close pop-up                        |
 | <kbd>Tab</kbd> / <kbd>Shift-Tab</kbd>                                                    | 𝐈 𝐒  | Navigate snippet placeholders       |
 | <kbd>g</kbd>+<kbd>d</kbd>                                                                |  𝐍   | goto definition                     |
 | <kbd>g</kbd>+<kbd>t</kbd>                                                                |  𝐍   | goto type definition                |
 | <kbd>g</kbd>+<kbd>D</kbd>                                                                |  𝐍   | goto declaration                    |
 | <kbd>g</kbd>+<kbd>I</kbd>                                                                |  𝐍   | goto implementation                 |
-<!-- | <kbd>g</kbd>+<kbd>p</kbd>                                                                |  𝐍   | peek implementation                 | -->
 | <kbd>g</kbd>+<kbd>r</kbd>                                                                |  𝐍   | goto references                     |
 | <kbd>g</kbd>+<kbd>f</kbd>                                                                |  𝐍   | open diagnostic float               |
 | <kbd>g</kbd>+<kbd>s</kbd>                                                                |  𝐍   | show signature help                 |
@@ -91,6 +89,10 @@ Note that,
 | <kbd>leader</kbd>+<kbd>lq</kbd>                                                          |  𝐍   | diagonstic loclist                  |
 | <kbd>leader</kbd>+<kbd>j</kbd>                                                           |  𝐍   | Next diagnostic                     |
 | <kbd>leader</kbd>+<kbd>k</kbd>                                                           |  𝐍   | Previous diagnostic                 |
+<!-- | <kbd>Space</kbd>+<kbd>l</kbd>+<kbd>r</kbd>                                               |  𝐍   | replace current word in project     | -->
+<!-- | <kbd>g</kbd>+<kbd>p</kbd>                                                                |  𝐍   | peek implementation                 | -->
+
+
 
 
 
@@ -124,18 +126,19 @@ Note that,
 
 | Key                                                                                      | Mode | Action                 |
 | ---------------------------------------------------------------------------------------- | :--: | ---------------------- |
-<!-- | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>j</kbd> or <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>k</kbd> |  𝐍   | Next/previous Git hunk | -->
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>p</kbd>                                               |  𝐍   | Preview hunk           |
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>l</kbd>                                               |  𝐍   | Blame line             |
-<!-- | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>l</kbd>                                               |  𝐍   | Toggle Blame line      | -->
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>s</kbd>                                               | 𝐍 𝐕  | Stage hunk             |
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>u</kbd>                                               |  𝐍   | Undo stage hunk        |
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>r</kbd>                                               | 𝐍 𝐕  | Reset hunk             |
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>S</kbd>                                               | 𝐍 𝐕  | Stage Buffer           |
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>R</kbd>                                               | 𝐍 𝐕  | Reset Buffer           |
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>d</kbd>                                               | 𝐍 𝐕  | Diff this              |
-<!-- | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>D</kbd>                                               | 𝐍 𝐕  | Diff This              | -->
 | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>t</kbd>                                               | 𝐍 𝐕  | Toggle Delted          |
+<!-- | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>D</kbd>                                               | 𝐍 𝐕  | Diff This              | -->
+<!-- | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>j</kbd> or <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>k</kbd> |  𝐍   | Next/previous Git hunk | -->
+<!-- | <kbd>Space</kbd>+<kbd>g</kbd>+<kbd>l</kbd>                                               |  𝐍   | Toggle Blame line      | -->
+
 
 Remaning: -- Text object -- map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
 
@@ -153,26 +156,33 @@ Remaning: -- Text object -- map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR
 
 | Key                                        | Mode | Action                     |
 | ------------------------------------------ | :--: | -------------------------- |
-| <kbd>Space</kbd>+<kbd>f</kbd>              |  𝐍   | File search                |
-| <kbd>Space</kbd>+<kbd>P</kbd>              |  𝐍   | Project search             |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>p</kbd> |  𝐍   | Project search             |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>P</kbd> |  𝐍   | Project files search       |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>g</kbd> |  𝐍   | Grep search                |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>f</kbd> |  𝐍   | Telescope find_files       |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>e</kbd> |  𝐍   | Telescope file_browser     |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>l</kbd> |  𝐍   | Reopen last search         |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>b</kbd> |  𝐍   | Buffers                    |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>c</kbd> |  𝐍   | Colorschemes               |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>C</kbd> |  𝐍   | Command history            |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>h</kbd> |  𝐍   | Find help                  |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>k</kbd> |  𝐍   | Keymap search              |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>M</kbd> |  𝐍   | Man Pages search           |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>r</kbd> |  𝐍   | Register search            |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>t</kbd> |  𝐕   | Grep string under cursor   |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>T</kbd> |  𝐍   | Grep raw                   |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>s</kbd> |  𝐍   | Builtin search             |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>T</kbd> |  𝐕   | Grep string under cursor   |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>t</kbd> |  𝐍   | Grep raw                   |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>S</kbd> |  𝐍   | Current buffer search      |
 | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>G</kbd> |  𝐍   | Git files search           |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>i</kbd> |  𝐍   | Installed plugins          |
-| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>p</kbd> |  𝐍   | Project search             |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>K</kbd> |  𝐍   | Command pallete            |
+| <kbd>Space</kbd>+<kbd>s</kbd>+<kbd>t</kbd> |  𝐍   | TODOS  search              |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>B</kbd> |  𝐍   | Browser bookmarks search   |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>n</kbd> |  𝐍   | Notification History       |
+| <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>l</kbd> |  𝐍   | Last Picker                |
+<!-- | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>i</kbd> |  𝐍   | Installed plugins          | -->
+<!-- | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>s</kbd> |  𝐍   | Builtin search             | -->
+<!-- | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>C</kbd> |  𝐍   | Command history            | -->
+<!-- | <kbd>Space</kbd>+<kbd>t</kbd>+<kbd>l</kbd> |  𝐍   | Reopen last search         | -->
+
+
+
 | **in _Telescope_ window**                  |      |                            |
 | <kbd>CR</kbd>                              | 𝐈 𝐍  | Multi/Single Open          |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>  <kbd>q</kbd> | 𝐈 𝐍  | Exit telescope             |

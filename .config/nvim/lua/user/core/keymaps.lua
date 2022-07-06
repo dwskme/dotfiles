@@ -64,11 +64,6 @@ keymap("t","<C-l>","<c-\\><c-n><c-w>l",opts)
 
 
 -- Plugins --
--- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 
 -- Renamer
 keymap('n', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', opts)
@@ -91,13 +86,13 @@ keymap("n", "<leader>xt", ":ToggleTerm<CR>", opts)
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 --Trouble
-keymap("n", "<leader>tD", "<cmd>Trouble document_diagnostics<cr>", opts)
-keymap("n", "<leader>td", "<cmd>Trouble lsp_definitions<cr>", opts)
-keymap("n", "<leader>tl", "<cmd>Trouble loclist<cr>", opts)
-keymap("n", "<leader>tq", "<cmd>Trouble quickfix<cr>", opts)
-keymap("n", "<leader>tr", "<cmd>Trouble lsp_references<cr>", opts)
-keymap("n", "<leader>tt", "<cmd>TodoLocList<cr>", opts)
-keymap("n", "<leader>tW", "<cmd>Trouble workspace_diagnostics<cr>", opts)
+-- keymap("n", "<leader>tD", "<cmd>Trouble document_diagnostics<cr>", opts)
+-- keymap("n", "<leader>td", "<cmd>Trouble lsp_definitions<cr>", opts)
+-- keymap("n", "<leader>tl", "<cmd>Trouble loclist<cr>", opts)
+-- keymap("n", "<leader>tq", "<cmd>Trouble quickfix<cr>", opts)
+-- keymap("n", "<leader>tr", "<cmd>Trouble lsp_references<cr>", opts)
+-- keymap("n", "<leader>tt", "<cmd>TodoLocList<cr>", opts)
+-- keymap("n", "<leader>tW", "<cmd>Trouble workspace_diagnostics<cr>", opts)
 
 
 -- DAP

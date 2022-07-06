@@ -1,3 +1,8 @@
+local utils = require "user.utils"
+vim.g.mapleader = " "
+vim.cmd [[set fcs=eob:\ ]]
+vim.cmd [[filetype plugin indent on]]
+
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
@@ -54,3 +59,5 @@ vim.opt.listchars = {
 }
 vim.opt.redrawtime = 1500
 vim.opt.ttimeoutlen = 10
+
+utils.set_indent_sizes { go = 4, python = 4, rust = 4, cpp = 4, c = 4, make = 4, lua = 4 }

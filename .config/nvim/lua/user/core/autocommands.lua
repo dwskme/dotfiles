@@ -3,6 +3,38 @@ local opt = vim.opt
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local group = augroup("on_bufenter", { clear = true })
+local highlight_group = augroup("YankHighlight", { clear = true })
+
+
+autocmd("TextYankPost", {
+    pattern = "*",
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+    group = highlight_group,
+})
+
+autocmd("BufWinEnter", {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.formatoptions:remove { "c", "r", "o" }
+    end,
+})
+
+autocmd("BufRead,BufNewFile", {
+    pattern = "tsconfig*.json",
+    callback = function()
+        vim.opt.filetype = "jsonc"
+    end,
+})
+
+autocmd("TermOpen", {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+    end,
+})
 
 -- Use 'q' to quit from common plugins
 autocmd({ "FileType" }, {
@@ -82,6 +114,7 @@ autocmd("BufWritePre", {
 
 -- Auto open nvim-tree when writing (nvim .) in command line
 -- and auto open Alpha when nothing given as argument.
+
 if vim.fn.index(vim.fn.argv(), ".") >= 0 then
   autocmd("VimEnter", {
     pattern = "*",
@@ -139,3 +172,6 @@ autocmd("FileChangedShellPost", {
     group = group,
     pattern = "*",
 })
+
+
+

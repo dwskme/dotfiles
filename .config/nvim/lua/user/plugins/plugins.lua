@@ -1,156 +1,292 @@
-local fn = vim.fn
+local utils = require "user.utils"
+local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    PACKER_BOOTSTRAP = vim.fn.system {
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
+        install_path,
+    }
+end
+vim.cmd [[packadd packer.nvim]]
 
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
+local _packer, packer = pcall(require, "packer")
+
+if not _packer then
+    return
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
-
--- Have packer use a popup window
 packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-  },
+    display = {
+        open_fn = function()
+            return require("packer.util").float { border = "single" }
+        end,
+        prompt_border = "single",
+    },
+    git = {
+        clone_timeout = 600,
+    },
+    auto_clean = true,
+    compile_on_sync = true,
 }
 
--- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
-  use { "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" } -- Have packer manage itself
-  use {	"nathom/filetype.nvim", commit = "b522628a45a17d58fc0073ffd64f9dc9530a8027"}
-  use { "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" }
-  use { "nvim-lua/plenary.nvim", commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" } -- Useful lua functions used by lots of plugins
-  use { "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates with both cmp and treesitter
-  use { "numToStr/Comment.nvim", commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" }
-  use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "88343753dbe81c227a1c1fd2c8d764afb8d36269" }
-  use { "kyazdani42/nvim-web-devicons", commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" }
-  use { "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" }   -- File Explorer
-  use { "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" }  --tabs management
-  use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }  --delete buffers without closing your windows or messing up your layout.
-  use { "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" } --statusline vim
-  use { "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" }
-  use { "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" }
-  use { "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" }
-  use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
-  use { "declancm/cinnamon.nvim" ,commit= "da5880d7fdd10cfa07df5c96b2bf22ff5d264019" }
-  use { "vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim"}
-  use { "folke/todo-comments.nvim",requires = "nvim-lua/plenary.nvim"}
-  use { 'ChristianChiarulli/nvim-gps' }
-  use { "folke/trouble.nvim",requires = "kyazdani42/nvim-web-devicons",}
-  use { "windwp/nvim-ts-autotag", commit = "5bbdfdaa303c698f060035f37a91eaad8d2f8e27"}
-  use { "filipdutescu/renamer.nvim",branch = 'master', requires =  {"nvim-lua/plenary.nvim"} }
-  use { "mvllow/modes.nvim" , commit = "095042fca156573744f7ed542f401d02c32bdd25"}
-  use { "max397574/better-escape.nvim", commit ="d5ee0cef56a7e41a86048c14f25e964876ac20c1"}
-  use { "gelguy/wilder.nvim",commit="86f5fb0962bc5954babf267ded6b144d992aef85" }
-  use { "folke/which-key.nvim"}
-  use { "rcarriga/nvim-notify"}
-  use { "simrat39/symbols-outline.nvim"}
-  use {"machakann/vim-sandwich" }
-  use {"liuchengxu/vista.vim" }
-  use {"Raimondi/delimitMate" } --check this plugin need or not cuz its not been update . serach its alternative
-  use { "danymat/neogen", config = function() require('neogen').setup {} end, requires = "nvim-treesitter/nvim-treesitter" }
-  use { 'dstein64/vim-startuptime' }
-  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+    use { "wbthomason/packer.nvim" }
+    use { "lewis6991/impatient.nvim" }
 
-  -- Colorschemes
-  use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
-  use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
-  use { "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6"}
-  use { "catppuccin/nvim",as = "catppuccin"}
-  use { "EdenEast/nightfox.nvim"}
-  use { "cocopon/iceberg.vim"}
-  -- cmp plugins
-  use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
-  use { "hrsh7th/cmp-buffer", commit = "62fc67a2b0205136bc3e312664624ba2ab4a9323" } -- buffer completions
-  use { "hrsh7th/cmp-path", commit = "466b6b8270f7ba89abd59f402c73f63c7331ff6e" } -- path completions
-  use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
-  use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
-  use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
-  use { "David-Kunz/cmp-npm" ,requires = {"nvim-lua/plenary.nvim"} , commit = "4b6166c3feeaf8dae162e33ee319dc5880e44a29"}
-  use { "petertriho/cmp-git"}
-  use { "hrsh7th/cmp-calc"}
-  use { "ray-x/cmp-treesitter"}
-  use { "lukas-reineke/cmp-rg"}
-  use { "hrsh7th/cmp-nvim-lsp-signature-help"}
-  use { "hrsh7th/cmp-emoji"}
-
-  -- snippets
-  use { "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" } --snippet engine
-  use { "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" } -- a bunch of snippets to use
-
-  -- LSP
-  use { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" } -- enable LSP
-  use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
-  use { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" } -- for formatters and linters
-  use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
-  use { "nvim-lua/lsp-status.nvim", commit ="4073f766f1303fb602802075e558fe43e382cc92"}
-  use { "onsails/lspkind.nvim",commit= "57e5b5dfbe991151b07d272a06e365a77cc3d0e7"}
-  use { "ray-x/lsp_signature.nvim",commit="6c65bc81dd041e7f4e49662bb8fb54cacc66efad"}
-
-  -- Telescope
-  use { "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" }
-  -- Telescope extensions
-  use { "cljoly/telescope-repo.nvim"}
-  use { "nvim-telescope/telescope-file-browser.nvim" }
-  use { "nvim-telescope/telescope-ui-select.nvim" }
-  use { "dhruvmanila/telescope-bookmarks.nvim"}
-  use { "nvim-telescope/telescope-github.nvim"}
-  -- Trying command palette
-  use { "LinArcX/telescope-command-palette.nvim" }
-  use { "AckslD/nvim-neoclip.lua",config = function() require("neoclip").setup()end,}
-  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-  use { "jvgrootveld/telescope-zoxide"}
+    -- added
+    use { "nathom/filetype.nvim", commit = "b522628a45a17d58fc0073ffd64f9dc9530a8027"}
+    use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }  --delete buffers without closing your windows or messing up your layout.
+    use { "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" } --statusline vim
+    use { "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" }
+    use { "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" }
+    use { "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" }
+    use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
+    use { "declancm/cinnamon.nvim" ,commit= "da5880d7fdd10cfa07df5c96b2bf22ff5d264019" }
+    use { "vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim"}
+    use { "folke/todo-comments.nvim",requires = "nvim-lua/plenary.nvim"}
+    use { 'ChristianChiarulli/nvim-gps' }
+    use { "filipdutescu/renamer.nvim",branch = 'master', requires =  {"nvim-lua/plenary.nvim"} }
+    use { "mvllow/modes.nvim" , commit = "095042fca156573744f7ed542f401d02c32bdd25"}
+    use { "max397574/better-escape.nvim", commit ="d5ee0cef56a7e41a86048c14f25e964876ac20c1"}
+    use { "gelguy/wilder.nvim",commit="86f5fb0962bc5954babf267ded6b144d992aef85" }
+    use { "rcarriga/nvim-notify"}
+    use { "simrat39/symbols-outline.nvim"}
+    use {"machakann/vim-sandwich" }
+    use {"liuchengxu/vista.vim" }
+    use {"Raimondi/delimitMate" } --check this plugin need or not cuz its not been update . serach its alternative
+    use { "danymat/neogen", config = function() require('neogen').setup {} end, requires = "nvim-treesitter/nvim-treesitter" }
+    use { 'dstein64/vim-startuptime' }
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+    use {"metakirby5/codi.vim"}
+    --added
 
 
-  -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    commit = "518e27589c0463af15463c9d675c65e464efc2fe",
-  }
-
-  -- Git
-  use { "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }
-
-  -- DAP
-  use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
-  use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
-  use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
-  use { "nvim-telescope/telescope-dap.nvim", requires = {"nvim-telescope/telescope.nvim"}, commit = "b4134fff5cbaf3b876e6011212ed60646e56f060"}
-  use { "theHamsta/nvim-dap-virtual-text", commit = "10368a11d175633f00ee6afb49708e42ae70ae7d"}
 
 
-  -- Test
-  -- use {"teto/vim-listchars"}
-  use {"metakirby5/codi.vim"}
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+
+
+
+    -- UI
+    use { "rmehri01/onenord.nvim" }
+    use { "projekt0n/github-nvim-theme" }
+    use { "ellisonleao/gruvbox.nvim" }
+    use {
+        "kyazdani42/nvim-web-devicons",
+        config = function()
+            require "user.plugins.configs.icons"
+        end,
+    }
+    use {
+        "akinsho/bufferline.nvim",
+        after = "nvim-web-devicons",
+        config = function()
+            require "user.plugins.configs.bufferline"
+        end,
+    }
+    -- use {
+    --     "folke/which-key.nvim",
+    -- }
+    use {
+        "karb94/neoscroll.nvim",
+        config = function()
+            require "user.plugins.configs.neoscroll"
+        end,
+    }
+    use {
+        "feline-nvim/feline.nvim",
+        after = "nvim-web-devicons",
+        config = function()
+            require "user.plugins.configs.feline"
+        end,
+    }
+
+    -- -- Treesitter
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        requires = {
+            "windwp/nvim-ts-autotag",
+            "p00f/nvim-ts-rainbow",
+            "nvim-treesitter/nvim-treesitter-textobjects",
+            "JoosepAlviste/nvim-ts-context-commentstring",
+        },
+        run = ":TSUpdate",
+        config = function()
+            require "user.plugins.configs.treesitter"
+        end,
+    }
+
+    -- -- Utilities
+    use {
+        "kyazdani42/nvim-tree.lua",
+        after = "nvim-web-devicons",
+        config = function()
+            require "user.plugins.configs.nvimtree"
+        end,
+    }
+    use {
+        "nvim-telescope/telescope.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-node-modules.nvim",
+        },
+        config = function()
+            require "user.plugins.configs.telescope"
+        end,
+    }
+    -- Telescope extensions
+    use { "cljoly/telescope-repo.nvim"}
+    use { "nvim-telescope/telescope-file-browser.nvim" }
+    use { "nvim-telescope/telescope-ui-select.nvim" }
+    use { "dhruvmanila/telescope-bookmarks.nvim"}
+    use { "nvim-telescope/telescope-github.nvim"}
+    -- Trying command palette
+    use { "LinArcX/telescope-command-palette.nvim" }
+    use { "AckslD/nvim-neoclip.lua",config = function() require("neoclip").setup()end,}
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    use { "jvgrootveld/telescope-zoxide"}
+
+    -- DAP
+    use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
+    use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
+    use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
+    use { "nvim-telescope/telescope-dap.nvim", requires = {"nvim-telescope/telescope.nvim"}, commit = "b4134fff5cbaf3b876e6011212ed60646e56f060"}
+    use { "theHamsta/nvim-dap-virtual-text", commit = "10368a11d175633f00ee6afb49708e42ae70ae7d"}
+
+
+
+    use {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require "user.plugins.configs.indent"
+        end,
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function()
+            require "user.plugins.configs.autopairs"
+        end,
+        setup = function()
+            -- utils.packer_lazy_load "nvim-autopairs"
+        end,
+    }
+    -- use {
+    --     "tpope/vim-surround",
+    --     setup = function()
+    --         -- utils.packer_lazy_load "vim-surround" --TODO:check
+    --     end,
+    -- }
+    use {
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require "user.plugins.configs.colorizer"
+        end,
+    }
+    use { "gpanders/editorconfig.nvim" }
+
+    -- LSP
+    use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
+    use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
+    use {
+        "neovim/nvim-lspconfig",
+        requires = {
+            "folke/lua-dev.nvim",
+            "jose-elias-alvarez/typescript.nvim",
+        },
+    }
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+    }
+    use {
+        "j-hui/fidget.nvim",
+        config = function()
+            require "user.plugins.configs.fidget"
+        end,
+    }
+
+    -- -- Comment
+    use {
+        "numToStr/Comment.nvim",
+        setup = function()
+            -- utils.packer_lazy_load "Comment.nvim"
+        end,
+    }
+
+    -- -- Completion
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-nvim-lsp-signature-help",
+            --added
+            "David-Kunz/cmp-npm", --TODO:check this is not working
+            "petertriho/cmp-git",
+            "hrsh7th/cmp-calc",
+            "ray-x/cmp-treesitter",
+            "lukas-reineke/cmp-rg",         --what does it do..
+            "hrsh7th/cmp-emoji",
+            "saadparwaiz1/cmp_luasnip",
+        },
+        config = function()
+            require "user.plugins.configs.cmp"
+        end,
+    }
+
+    -- -- Snippets
+    use {
+        "dsznajder/vscode-es7-javascript-react-snippets",
+        run = "yarn install --frozen-lockfile && yarn compile",
+        setup = function()
+            -- utils.packer_lazy_load "vscode-es7-javascript-react-snippets"
+        end,
+    }
+
+    use { "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" } --snippet engine
+    use {
+        "rafamadriz/friendly-snippets",
+        setup = function()
+            -- utils.packer_lazy_load "friendly-snippets"
+        end,
+    }
+
+    -- Tmux
+    use {
+        "aserowy/tmux.nvim",
+        config = function()
+            require "user.plugins.configs.tmux"
+        end,
+    }
+
+    -- Git
+    use {
+        "lewis6991/gitsigns.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+        setup = function()
+            -- utils.packer_lazy_load "gitsigns.nvim"
+        end,
+    }
+
+    -- Markdown
+    use {
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    }
+
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
 end)

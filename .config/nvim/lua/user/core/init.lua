@@ -1,5 +1,7 @@
-require("user.core.keymaps")
-require("user.core.options")
 require("user.core.autocommands")
+require("user.core.options")
+require("user.core.colors")
 require("user.core.disabled")
-require("user.core.colorscheme")
+require("user.core.keymaps")
+
+
