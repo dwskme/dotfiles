@@ -20,7 +20,7 @@ vim.g.mapleader = " "
 
 -- UI
 
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>fe", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>o", ":SymbolsOutline<CR>", opts)
 keymap("n", "<leader>O", ":Vista!!<CR>", opts)
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)

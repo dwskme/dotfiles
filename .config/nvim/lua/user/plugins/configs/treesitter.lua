@@ -22,9 +22,6 @@ treesitter.setup {
 			'glimmer','handlebars','hbs'
 		},
     },
-    indent = {
-        enable = true,
-    },
     ensure_installed = "all",
     highlight = {
 		enable = true, -- false will disable the whole extension

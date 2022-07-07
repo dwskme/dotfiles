@@ -47,20 +47,19 @@ return packer.startup(function(use)
     use { "declancm/cinnamon.nvim" ,commit= "da5880d7fdd10cfa07df5c96b2bf22ff5d264019" }
     use { "vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim"}
     use { "folke/todo-comments.nvim",requires = "nvim-lua/plenary.nvim"}
-    use { 'ChristianChiarulli/nvim-gps' }
     use { "filipdutescu/renamer.nvim",branch = 'master', requires =  {"nvim-lua/plenary.nvim"} }
     use { "mvllow/modes.nvim" , commit = "095042fca156573744f7ed542f401d02c32bdd25"}
     use { "max397574/better-escape.nvim", commit ="d5ee0cef56a7e41a86048c14f25e964876ac20c1"}
     use { "gelguy/wilder.nvim",commit="86f5fb0962bc5954babf267ded6b144d992aef85" }
     use { "rcarriga/nvim-notify"}
     use { "simrat39/symbols-outline.nvim"}
-    use {"machakann/vim-sandwich" }
-    use {"liuchengxu/vista.vim" }
-    use {"Raimondi/delimitMate" } --check this plugin need or not cuz its not been update . serach its alternative
+    use { "machakann/vim-sandwich" }
+    use { "liuchengxu/vista.vim" }
+    use { "Raimondi/delimitMate" } --check this plugin need or not cuz its not been update . serach its alternative
     use { "danymat/neogen", config = function() require('neogen').setup {} end, requires = "nvim-treesitter/nvim-treesitter" }
-    use { 'dstein64/vim-startuptime' }
-    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
-    use {"metakirby5/codi.vim"}
+    use { "dstein64/vim-startuptime" }
+    use { "kevinhwang91/nvim-ufo", requires = 'kevinhwang91/promise-async'}
+    use { "metakirby5/codi.vim"}
     --added
 
 

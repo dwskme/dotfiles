@@ -30,7 +30,7 @@ _M.setup = function(on_attach)
             diagnostics.jsonlint,
             diagnostics.checkmake,
             diagnostics.alex,
-            formatting.prettierd,
+            -- formatting.prettierd,
             formatting.stylua,
             formatting.gofmt,
             formatting.shfmt.with {
