@@ -319,6 +319,11 @@ lsp-status: Shows lsp status in statusbar.
 
 
 ### Fixes:
+check individual installed plugins and keybinds related to them
+find and make more easy configs for beautiful ui colors and icons
+learn about lsp and more settings
+remove unused plugins and see other plygins that is or need to get installed
+
 dab-telescope fix,
 todo-comments accessible from telescope,
 term-toggle: more keybinds and some settings,
