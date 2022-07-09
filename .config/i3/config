@@ -9,7 +9,7 @@ set $mod Mod4
 set $alt Mod1
 
 ##-- Fonts (Global) ----------------------
-font pango:JetBrains Mono Medium 12
+font pango: JetBrains Mono Medium 12
 
 ##-- Gaps --------------------------------
 
@@ -50,17 +50,16 @@ exec_always --no-startup-id 	~/.config/i3/bin/autostart.sh
 ##-- Key Bindings ------------------------
 
 # -- Terminal --
-bindsym $mod+Return 			exec --no-startup-id ~/.config/i3/bin/i3term.sh
-bindsym $mod+Shift+Return 		exec --no-startup-id ~/.config/i3/bin/i3term.sh -f
+bindsym $mod+Return 			              exec --no-startup-id ~/.config/i3/bin/i3term.sh
+bindsym $mod+Shift+Return 		          exec --no-startup-id ~/.config/i3/bin/i3term.sh -f
 bindsym $mod+t                          exec --no-startup-id ~/.config/i3/bin/i3term.sh -s
-bindsym $mod+Ctrl+t                     exec --no-startup-id st
+bindsym $mod+Shift+t                    exec --no-startup-id st
 
 # -- Apps --
 bindsym $mod+F1 			exec --no-startup-id chrome
 bindsym $mod+F2 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e nvim"
 bindsym $mod+F3 			exec --no-startup-id thunar
 bindsym $mod+Shift+F3 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e ranger"
-bindsym $alt+Control+v 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e vim"
 bindsym $alt+Control+h 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e htop"
 bindsym $alt+Control+b 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e bashtop"
 
@@ -104,7 +103,7 @@ bindsym $mod+q kill
 bindsym $mod+c kill
 
 # change focus
-bindsym $mod+h focus left1
+bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
