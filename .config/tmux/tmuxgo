@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# Set Session Name
+SESSION=`basename $PWD`
+SESSIONEXISTS=$(tmux list-sessions | grep $SESSION)
+
+# Only create tmux session if it doesn't already exist
+if [ "$SESSIONEXISTS" = "" ]
+then
+    tmux new-session -d -s $session
+
+    window=1
+    tmux rename-window $session: $window 
+    tmux send-keys -t $session: $window 'nvim .' C-m
+
+    window=2
+    tmux new-window -t $session:$window -a -n 'git'
+    tmux send-keys -t $session:$window 'git fetch --prune --all' C-m
+
+    window=3
+    tmux new-window -t $session:$window -a -n 'serve'
+    tmux split-window -h
+    tmux select-plane -t 0
+    tmux send-keys -t $session:$window 'npm run serve'
+
+    window=4
+    tmux new-window -t $session -n lazygit 
+    tmux send-keys 'lazygit' C-m
+
+    window=5
+    tmux new-window -t $session -a -n files 'ranger'
+    tmux split-window -h
+    tmux select-pane -t 0
+
+    window=6
+    tmux new-window -t $session -a -n logs
+    tmux split-window -v
+    tmux select-pane -t 0
+
+    widnow=7
+    tmux new-window -t $session -a -n elinks 'elinks -no-connect'
+    tmux split-window -h
+    tmux select-pane -t 0
+    tmux resize-pane -R 30
+
+fi
+
+tmux attach-session -t $session

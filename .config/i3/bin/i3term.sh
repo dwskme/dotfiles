@@ -7,10 +7,12 @@
 
 CONFIG="$HOME/.config/alacritty/alacritty.yml"
 
-if [ "$1" == "-f" ]; then
+if [ "$1" == "-t" ]; then
+	alacritty --config-file "$CONFIG" -o window.opacity=0.65
+elif [ "$1" == "-f" ]; then
 	alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG" -o window.opacity=0.65
 elif [ "$1" == "-s" ]; then
-	alacritty --class 'Fullscreen,Fullscreen' --config-file "$CONFIG" -o window.startup_mode=fullscreen window.padding.x=30 window.padding.y=30 window.opacity=0.65 font.size=14
+	alacritty --class 'Fullscreen,Fullscreen' --config-file "$CONFIG" -o window.startup_mode=fullscreen window.padding.x=30 window.padding.y=30 window.opacity=0.6
 else
 	alacritty --config-file "$CONFIG"
 fi
