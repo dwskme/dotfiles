@@ -16,3 +16,4 @@
 12. tmux full config and install required packages.
 13. add transparent toggle plugin nvim
 14. lazygit config
+15. starship toml and installer and choose 4 for fonts
