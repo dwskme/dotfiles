@@ -12,40 +12,40 @@ set --export GIT_EDITOR nvim
 set --export ERL_AFLAGS "-kernel shell_history enabled" # iex history
 
 
-### Abbreviations (expanded aliases)
-abbr c 'code .'
-abbr ls 'exa -la  --icons'
-abbr combinepdfs 'pdfunite' # vertical
-abbr rg 'rg --follow' # Follow symbolic links (disable with --no-follow)
-abbr rgs 'rg --fixed-strings' # Exact match, no regex interpretation
+### aliaseviations (expanded aliases)
+alias c 'code .'
+alias ls 'exa -la  --icons'
+alias combinepdfs 'pdfunite' # vertical
+alias rg 'rg --follow' # Follow symbolic links (disable with --no-follow)
+alias rgs 'rg --fixed-strings' # Exact match, no regex interpretation
 
 
 #Git
-abbr g 'git'
-abbr gd 'git diff'
-abbr gds 'git diff --staged'
-abbr gc 'git commit'
-abbr gcm 'git commit --message'
-abbr gca 'git commit --all'
-abbr gcam 'git commit -am'
-abbr gcp 'git cherry-pick'
-abbr gl 'git log --oneline --decorate'
-abbr gg 'git log --graph --date=relative'
-abbr ggg 'git show --name-only'
-abbr ga 'git add'
-abbr gap 'git add --patch'
-abbr gu 'git add --update'
-abbr gan 'git add --intent-to-add'
-abbr gco 'git checkout'
-abbr gb 'git branch'
-abbr gp 'git push origin HEAD'
-abbr gpf 'git push origin HEAD --force-with-lease'
-abbr gpl 'git pull'
-abbr gsl 'git stash list'
-abbr gs 'git status --short --branch'
-abbr gsi 'git status --short --branch --ignored'
-abbr gsw 'git show'
-abbr space 'sudo ncdu --exclude-firmlinks /' # Interactive breakdown of disk space
+alias g 'git'
+alias gd 'git diff'
+alias gds 'git diff --staged'
+alias gc 'git commit'
+alias gcm 'git commit --message'
+alias gca 'git commit --all'
+alias gcam 'git commit -am'
+alias gcp 'git cherry-pick'
+alias gl 'git log --oneline --decorate'
+alias gg 'git log --graph --date=relative'
+alias ggg 'git show --name-only'
+alias ga 'git add'
+alias gap 'git add --patch'
+alias gu 'git add --update'
+alias gan 'git add --intent-to-add'
+alias gco 'git checkout'
+alias gb 'git branch'
+alias gp 'git push origin HEAD'
+alias gpf 'git push origin HEAD --force-with-lease'
+alias gpl 'git pull'
+alias gsl 'git stash list'
+alias gs 'git status --short --branch'
+alias gsi 'git status --short --branch --ignored'
+alias gsw 'git show'
+alias space 'sudo ncdu --exclude-firmlinks /' # Interactive breakdown of disk space
 
 
 
@@ -113,4 +113,4 @@ end
 if test -f ~/.config/fish/local.config.fish
   source ~/.config/fish/local.config.fish
 end
-
+starship init fish | source
