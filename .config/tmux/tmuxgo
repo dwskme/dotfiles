@@ -9,36 +9,29 @@ if [ "$sessionEXISTS" = "" ]
 then
     tmux new-session -d -s $session
 
-    window=1
     tmux rename-window $session
-    tmux send-keys -t $session: 'nvim .' C-m
+    tmux send-keys -t $session:1 'nvim .' C-m
 
-    window=2
-    tmux new-window -t $session:$window -a -n 'serve'
+    tmux new-window -t $session:2  -a -n 'server'
     tmux split-window -h
     tmux select-pane -t 0
-    tmux send-keys -t $session:$window 'npm run serve'
+    tmux send-keys -t $session 'npm run '
 
-    window=3
-    tmux new-window -t $session -a -n lazygit
+    tmux new-window -t $session:3 -a -n lazygit
     tmux send-keys 'lazygit' C-m
 
-    window=4
-    tmux new-window -t $session:$window -a -n 'git'
-    tmux send-keys -t $session:$window 'git fetch --prune --all' C-m
+    tmux new-window -t $session:4  -a -n 'git'
+    tmux send-keys -t $session 'git fetch --prune --all' C-m
 
-    window=5
-    tmux new-window -t $session -a -n files 'ranger'
+    tmux new-window -t $session:5 -a -n files 'ranger'
     tmux split-window -h
     tmux select-pane -t 0
 
-    window=6
-    tmux new-window -t $session -a -n logs
+    tmux new-window -t $session:6 -a -n logs
     tmux split-window -v
     tmux select-pane -t 0
 
-    widnow=7
-    tmux new-window -t $session -a -n elinks 'elinks -no-connect'
+    tmux new-window -t $session:7 -a -n elinks 'elinks -no-connect'
     tmux split-window -h
     tmux select-pane -t 0
     tmux resize-pane -R 30
