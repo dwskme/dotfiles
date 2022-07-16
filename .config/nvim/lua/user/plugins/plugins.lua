@@ -42,7 +42,6 @@ return packer.startup(function(use)
     use { "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" } --statusline vim
     use { "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" }
     use { "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" }
-    use { "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" }
     use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
     use { "declancm/cinnamon.nvim" ,commit= "da5880d7fdd10cfa07df5c96b2bf22ff5d264019" }
     use { "vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim"}
@@ -53,7 +52,6 @@ return packer.startup(function(use)
     use { "gelguy/wilder.nvim",commit="86f5fb0962bc5954babf267ded6b144d992aef85" }
     use { "rcarriga/nvim-notify"}
     use { "simrat39/symbols-outline.nvim"}
-    use { "machakann/vim-sandwich" }
     use { "liuchengxu/vista.vim" }
     use { "Raimondi/delimitMate" } --check this plugin need or not cuz its not been update . serach its alternative
     use { "danymat/neogen", config = function() require('neogen').setup {} end, requires = "nvim-treesitter/nvim-treesitter" }
@@ -82,9 +80,6 @@ return packer.startup(function(use)
     use {
         "akinsho/bufferline.nvim",
         after = "nvim-web-devicons",
-        config = function()
-            require "user.plugins.configs.bufferline"
-        end,
     }
     -- use {
     --     "folke/which-key.nvim",
@@ -113,28 +108,23 @@ return packer.startup(function(use)
             "JoosepAlviste/nvim-ts-context-commentstring",
         },
         run = ":TSUpdate",
-        config = function()
-            require "user.plugins.configs.treesitter"
-        end,
     }
 
     -- -- Utilities
     use {
-        "kyazdani42/nvim-tree.lua",
-        after = "nvim-web-devicons",
-        config = function()
-            require "user.plugins.configs.nvimtree"
-        end,
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
+    
     use {
         "nvim-telescope/telescope.nvim",
         requires = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-node-modules.nvim",
         },
-        config = function()
-            require "user.plugins.configs.telescope"
-        end,
     }
     -- Telescope extensions
     use { "cljoly/telescope-repo.nvim"}
@@ -159,30 +149,21 @@ return packer.startup(function(use)
 
     use {
         "lukas-reineke/indent-blankline.nvim",
-        config = function()
-            require "user.plugins.configs.indent"
-        end,
     }
     use {
         "windwp/nvim-autopairs",
-        config = function()
-            require "user.plugins.configs.autopairs"
-        end,
         setup = function()
             -- utils.packer_lazy_load "nvim-autopairs"
         end,
     }
-    -- use {
-    --     "tpope/vim-surround",
-    --     setup = function()
-    --         -- utils.packer_lazy_load "vim-surround" --TODO:check
-    --     end,
-    -- }
+    use {
+        "tpope/vim-surround",
+        setup = function()
+            -- utils.packer_lazy_load "vim-surround" --TODO:check
+        end,
+    }
     use {
         "norcalli/nvim-colorizer.lua",
-        config = function()
-            require "user.plugins.configs.colorizer"
-        end,
     }
     use { "gpanders/editorconfig.nvim" }
 
