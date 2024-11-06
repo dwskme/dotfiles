@@ -1,8 +1,0 @@
-
-
-#Installing node and npm
-paru -S nvm 
-echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.bashrc
-exec $SHELL
-nvm install --lts
-nvm use --lts
