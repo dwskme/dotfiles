@@ -438,10 +438,6 @@ export PATH="$CARGO_HOME/bin:$PATH"
 # Ruby Configuration
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
-# Python Configuration
-export PYTHONPATH="$HOME/.local/lib/python3.9/site-packages:$PYTHONPATH"
-export PYTHONDONTWRITEBYTECODE=1
-
 # Node.js Configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -487,10 +483,6 @@ print_step "Performing final setup tasks..."
 
 # Create Screenshots directory
 mkdir -p "$HOME/Pictures/Screenshots"
-
-# Setup Python Data Science Environment
-print_step "Setting up Python data science packages..."
-conda install -y numpy pandas matplotlib seaborn scikit-learn
 
 # Clone and Setup Dotfiles
 print_step "Setting up dotfiles..."
