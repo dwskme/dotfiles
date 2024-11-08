@@ -1,0 +1,81 @@
+#!/usr/bin/env sh
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+#options
+source "$HOME/.config/yabai/colors.sh"
+
+# for borders variables
+borders_options=(
+	style=round
+  width=6
+  hidpi=on
+  active_color="gradient(top_left=0xee$MOCHA_LAVENDER,bottom_right=0xee$MOCHA_MAUVE)"
+  inactive_color="gradient(top_left=0xaa$MOCHA_OVERLAY0,bottom_right=0xdd$MOCHA_SURFACE0)"
+)
+
+# Initialise Bootstraps
+sketchybar &
+borders "${borders_options[@]}" & 
+
+
+
+#stack bsp float
+yabai -m config layout                      bsp
+
+# Set all padding and gaps to 2pt (default: 0)
+yabai -m config top_padding                 2
+yabai -m config bottom_padding              2
+yabai -m config left_padding                2
+yabai -m config right_padding               2
+yabai -m config window_gap                  2
+
+# Space specific 
+yabai -m config --space 2 window_gap        0
+yabai -m config --space 9 layout            stack
+
+# Split settings
+yabai -m config auto_balance                off
+yabai -m config split_ratio                 0.5
+
+#mouse settings
+yabai -m config mouse_modifier              fn
+yabai -m config mouse_action1               move
+yabai -m config mouse_action2               resize
+yabai -m config mouse_follows_focus         autoraise #off, autoraise, autofocus
+yabai -m config focus_follows_mouse         on
+yabai -m config mouse_drop_action           swap
+
+#Window settings
+yabai -m config window_opacity              on
+yabai -m config window_opacity_duration     0.2          
+yabai -m config active_window_opacity       1.0
+yabai -m config normal_window_opacity       0.8
+
+yabai -m config external_bar                all:30:0
+yabai -m config window_zoom_persist         off
+yabai -m config window_placement            second_child
+yabai -m config window_shadow               float
+yabai -m config window_animation_duration   0.5
+yabai -m config window_animation_easing     ease_out_quint
+yabai -m config insert_feedback_color       0xff$MOCHA_RED 
+
+
+
+
+#Exclude problematic apps from being managed:
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
+yabai -m rule --add app="^(Karabiner-(Elements|EventViewer)|iPhone Mirroring|Raycast|Keka|CleanMyMac X)$" manage=off
+yabai -m rule --add label="WeChat" app="^WeChat$" title!="^WeChat \(Chats)$" manage=off
+yabai -m rule --add label="Arc" app="^Arc$" title="^(Mirage|General|Profiles|Max|Links|Shortcuts|Icon|Advanced)$" manage=off
+yabai -m rule --add label="Books" app="^Books$" title!="^(Home|All|Want to Read|Finished|(PDF|My Sample|(Book|Audiobook)s))$" manage=off
+yabai -m rule --add label="Zoom" app="zoom.us" title!="Zoom Workplace" manage=off
+yabai -m rule --add label="CLassin" app="ClassIn" title!="ClassIn" manage=off
+yabai -m rule --add label="Nightly" app="Firefox Nightly" title="Picture-In-Picture" manage=off
+yabai -m rule --add label="Firefox" app="Firefox" title="Picture-In-Picture" manage=off
+echo "yabai configuration loaded.."
