@@ -172,7 +172,7 @@ brew install --cask \
 
 
 brew install \
-    lazygit dooit btop \ # Terminal UI tools
+    lazygit dooit btop figlet\ # Terminal UI tools
     texlab mactex \ # LaTeX tools
     wireguard-go svim # Network and clipboard tools
 
