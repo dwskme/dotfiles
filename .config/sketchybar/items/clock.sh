@@ -1,33 +1,21 @@
-# #!/bin/bash
-#
-# calendar=(
-#   icon=cal
-#   icon.font="$FONT:Black:12.0"
-#   icon.padding_right=0
-#   label.align=right
-#   width=130
-#   padding_left=15
-#   script="$PLUGIN_DIR/calendar.sh"
-#   update_freq=60
-#   updates=on
-# )
-#
-# sketchybar --add item calendar right       \
-#            --set calendar "${calendar[@]}" \
-#            --subscribe calendar system_woke
-#!/bin/bash
+#!/usr/bin/env bash
 
-clock=(
-  icon=󰃰
-  icon.color=$RED
-  update_freq=10
-  background.color=$BACKGROUND_1
-  icon.padding_left=10
-  icon.padding_right=10
-  label.padding_right=10
-  label.padding_left=0
-)
+COLOR="$MAGENTA"
 
 sketchybar --add item clock right \
-  --set clock ${clock[@]}\
-    script="$PLUGIN_DIR/clock.sh"
+	--set clock update_freq=1 \
+	icon.padding_left=10 \
+	icon.color="$COLOR" \
+	icon="" \
+	label.color="$COLOR" \
+	label.padding_right=5 \
+	label.width=78 \
+	align=center \
+	background.height=26 \
+	background.corner_radius="$CORNER_RADIUS" \
+	background.padding_right=2 \
+	background.border_width="$BORDER_WIDTH" \
+	background.border_color="$COLOR" \
+	background.color="$BAR_COLOR" \
+	background.drawing=on \
+	script="$PLUGIN_DIR/clock.sh"

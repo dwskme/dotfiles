@@ -1,17 +1,20 @@
-#bin/bash
+#!/usr/bin/env bash
 
-volume=(
-  script="$PLUGIN_DIR/volume.sh"
-  icon.color="$BLUE"
-  icon.font="$FONT_FACE:Regular:16.0"
-  label.drawing=true
-  background.color=$BACKGROUND_1
-  icon.padding_left=10
-  icon.padding_right=10
-  label.padding_right=10
-  label.padding_left=0
-)
+COLOR="$GREEN"
 
-sketchybar --add item volume right
-sketchybar --set volume "${volume[@]}"
-sketchybar --subscribe volume volume_change
+sketchybar \
+	--add item sound right \
+	--set sound \
+	icon.color="$COLOR" \
+	icon.padding_left=10 \
+	label.color="$COLOR" \
+	label.padding_right=10 \
+	background.height=26 \
+	background.corner_radius="$CORNER_RADIUS" \
+	background.padding_right=5 \
+	background.border_width="$BORDER_WIDTH" \
+	background.border_color="$COLOR" \
+	background.color="$BAR_COLOR" \
+	background.drawing=on \
+	script="$PLUGIN_DIR/sound.sh" \
+	--subscribe sound volume_change
