@@ -71,6 +71,8 @@ yabai_rule app="^Kitty" space=^1
 yabai_rule app="^iTerm2" space=^1
 yabai_rule app="^Google Chrome" space=^2
 yabai_rule app="^Code" space=^3
+yabai_rule app="^Zed" space=^3
+yabai_rule app="^TexShop" space=^4
 yabai_rule app="^Obsidian" space=^4
 yabai_rule app="^Slack" space=^5
 yabai_rule app="^Spotify" space=^5
@@ -105,21 +107,21 @@ yabai -m config split_ratio                 0.5
 yabai -m config mouse_modifier              fn
 yabai -m config mouse_action1               move
 yabai -m config mouse_action2               resize
-yabai -m config mouse_follows_focus         autoraise #off, autoraise, autofocus
+yabai -m config mouse_follows_focus         autofocus #off, autoraise, autoraise
 yabai -m config focus_follows_mouse         on
 yabai -m config mouse_drop_action           swap
 
 #Window settings
 yabai -m config window_opacity              on
-yabai -m config window_opacity_duration     0.2          
-yabai -m config active_window_opacity       1.0
+yabai -m config window_opacity_duration     0.1          
+yabai -m config active_window_opacity       0.9
 yabai -m config normal_window_opacity       0.8
 
 yabai -m config external_bar                all:30:0
 yabai -m config window_zoom_persist         off
 yabai -m config window_placement            second_child
 yabai -m config window_shadow               float
-yabai -m config window_animation_duration   0.5
+yabai -m config window_animation_duration   0.2
 yabai -m config window_animation_easing     ease_out_quint
 yabai -m config insert_feedback_color       0xff$MOCHA_RED 
 

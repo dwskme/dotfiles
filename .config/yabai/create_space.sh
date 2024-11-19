@@ -15,9 +15,9 @@ function setup_space {
 }
 
 
-setup_space 1 web@dwsk
-setup_space 2 code
-setup_space 3 web@sam
+setup_space 1 term
+setup_space 2 web@sam
+setup_space 3 code
 setup_space 4 obsidian
 setup_space 5 messaging
 setup_space 6 vlat
