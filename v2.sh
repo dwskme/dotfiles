@@ -260,6 +260,8 @@ brew install --cask \
     sf-symbols font-hack-nerd-font \
     font-jetbrains-mono font-fira-code \
     font-iosevka-term-nerd-font
+brew install font-karla
+brew install font-rubik
 
 # =============================================================================
 # System Configurations
