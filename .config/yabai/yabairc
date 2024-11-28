@@ -1,0 +1,174 @@
+#!/usr/bin/env sh
+
+
+# Unload the macOS WindowManager process
+launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
+
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=display_added action="sleep 2 && $HOME/.dotfiles/yabai/create_spaces.sh"
+yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.dotfiles/yabai/create_spaces.sh"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+
+
+
+
+#options
+source "$HOME/.config/yabai/colors.sh"
+
+# for borders variables
+borders_options=(
+	style=round
+  width=6
+  hidpi=on
+  active_color="gradient(top_left=0xee$MOCHA_LAVENDER,bottom_right=0xee$MOCHA_MAUVE)"
+  inactive_color="gradient(top_left=0xaa$MOCHA_OVERLAY0,bottom_right=0xdd$MOCHA_SURFACE0)"
+)
+
+# Initialise Bootstraps
+sketchybar &
+borders "${borders_options[@]}" & 
+
+#
+# setup spaces
+#
+for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 7)'); do
+  yabai -m space --destroy 8
+done
+
+function setup_space {
+  local idx="$1"
+  local name="$2"
+  local space=
+  echo "setup space $idx : $name"
+
+  space=$(yabai -m query --spaces --space "$idx")
+  if [ -z "$space" ]; then
+    yabai -m space --create
+  fi
+
+  yabai -m space "$idx" --label "$name"
+}
+
+setup_space 1 term 
+setup_space 2 web
+setup_space 3 code
+setup_space 4 note
+setup_space 5 media
+setup_space 6 other
+
+## rule to manage app
+function yabai_rule {
+  yabai -m rule --add "$@"
+  yabai -m rule --apply "$@"
+}
+# move some apps automatically to specific spaces
+yabai_rule app="^Finder$" manage=off
+yabai_rule app="^Kitty" space=^1
+yabai_rule app="^iTerm2" space=^1
+yabai_rule app="^Google Chrome" space=^2
+yabai_rule app="^Code" space=^3
+yabai_rule app="^Zed" space=^3
+yabai_rule app="^TexShop" space=^4
+yabai_rule app="^Obsidian" space=^4
+yabai_rule app="^Slack" space=^5
+yabai_rule app="^Spotify" space=^5
+yabai_rule app="^Discord" space=^5
+yabai_rule app="^WhatsApp" space=^5
+yabai_rule app="^OBS Studio" space=^6
+yabai_rule app="^Adobe Photoshop 2024" space=^7
+yabai_rule app="^Adobe Premiere Pro 2024$" space=^7 
+
+
+
+#stack bsp float
+yabai -m config layout                      bsp
+
+# Set all padding and gaps to 2pt (default: 0)
+yabai -m config top_padding                 2
+yabai -m config bottom_padding              2
+yabai -m config left_padding                2
+yabai -m config right_padding               2
+yabai -m config window_gap                  2
+
+# Space specific 
+yabai -m config --space 2 window_gap        0
+yabai -m config --space 9 layout            stack
+
+
+# Split settings
+yabai -m config auto_balance                off
+yabai -m config split_ratio                 0.5
+
+#mouse settings
+yabai -m config mouse_modifier              fn
+yabai -m config mouse_action1               move
+yabai -m config mouse_action2               resize
+yabai -m config mouse_follows_focus         autofocus #off, autoraise, autoraise
+yabai -m config focus_follows_mouse         on
+yabai -m config mouse_drop_action           swap
+
+#Window settings
+yabai -m config window_opacity              on
+yabai -m config window_opacity_duration     0.1          
+yabai -m config active_window_opacity       0.9
+yabai -m config normal_window_opacity       0.8
+
+yabai -m config external_bar                all:30:0
+yabai -m config window_zoom_persist         off
+yabai -m config window_placement            second_child
+yabai -m config window_shadow               float
+yabai -m config window_animation_duration   0.2
+yabai -m config window_animation_easing     ease_out_quint
+yabai -m config insert_feedback_color       0xff$MOCHA_RED 
+
+#when space changes
+yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
+yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
+
+#Exclude problematic apps from being managed:
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
+yabai -m rule --add app="^(Karabiner-(Elements|EventViewer)|iPhone Mirroring|Raycast|Keka|CleanMyMac X)$" manage=off
+yabai -m rule --add label="WeChat" app="^WeChat$" title!="^WeChat \(Chats)$" manage=off
+yabai -m rule --add label="Arc" app="^Arc$" title="^(Mirage|General|Profiles|Max|Links|Shortcuts|Icon|Advanced)$" manage=off
+yabai -m rule --add label="Books" app="^Books$" title!="^(Home|All|Want to Read|Finished|(PDF|My Sample|(Book|Audiobook)s))$" manage=off
+yabai -m rule --add label="Zoom" app="zoom.us" title!="Zoom Workplace" manage=off
+yabai -m rule --add label="CLassin" app="ClassIn" title!="ClassIn" manage=off
+yabai -m rule --add label="Nightly" app="Firefox Nightly" title="Picture-In-Picture" manage=off
+yabai -m rule --add label="Firefox" app="Firefox" title="Picture-In-Picture" manage=off
+
+# float IntelliJ Preference panes
+yabai -m rule --add app='IntelliJ IDEA' title='^$' manage=off
+yabai -m rule --add app='IntelliJ IDEA' title='Project Structure' manage=off
+yabai -m rule --add app='IntelliJ IDEA' title='Preferences' manage=off
+yabai -m rule --add app='IntelliJ IDEA' title='Edit configuration' manage=off
+yabai -m rule --add app='IntelliJ IDEA' title='Select Classes to Import' manage=off
+yabai -m rule --add app='IntelliJ IDEA' title='Licenses' manage=off
+
+# float Jetbrains Toolbox
+yabai -m rule --add app='JetBrains Toolbox' manage=off
+
+# plot figures
+yabai -m rule --add title="Subplot configuration tool" manage=off
+yabai -m rule --add title="Figure 1" manage=off
+yabai -m rule --add title="Figure 2" manage=off
+yabai -m rule --add title="Figure 3" manage=off
+yabai -m rule --add title="Figure 4" manage=off
+yabai -m rule --add title="Figure 5" manage=off
+
+# Premiere need this in order to be managed properly 
+yabai -m rule --add app="^Adobe Premiere Pro 2024$" role="AXLayoutArea" subrole="AXFloatingWindow" manage=on
+yabai -m rule --add app="^Adobe Premiere Pro 2024$" role="AXLayoutArea" subrole="AXDialog" manage=on
+#yabai -m rule --add app="^Adobe Premiere Pro 2024$" manage=off
+
+echo "yabai configuration loaded.."
+
+
+
